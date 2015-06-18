@@ -60,57 +60,62 @@
         
         <div class="col-sm-10 col-md-offset-1  col-md-10 ">
 
-           <h3 class="page-header">Bug Filter Condition</h3>
+           <h4 class="page-header">Bug FUNed</h4>
 
           <div class="row placeholders">
+          <div class="col-xs-6 col-sm-1 placeholder">
+              <div id="release">Release<span class="caret"></span></div>
+            </div>
             <div class="col-xs-6 col-sm-1">
               <div id="project">Project<span class="caret"></span></div>
             </div>
             <div class="col-xs-6 col-sm-1 placeholder">
               <div id="track">Track<span class="caret"></span></div>
             </div>
+            
             <div class="col-xs-6 col-sm-1 placeholder">
-              <div id="project">Release<span class="caret"></span></div>
-            </div>
-            <div class="col-xs-6 col-sm-1 placeholder">
-              <div id="project">...<span class="caret"></span></div>
+              
             </div>
           </div>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
                 <tr>
+                  <th>Score</th>
+                  <th>Views</th>
                   <th>ID</th>
-                  <th>Name</th>
+                  <th>Description</th>
                   <th>Requirement</th>
                   <th>Serverity</th>
-                  <th>State</th>
-                  <th>Submitted By</th>
+                  <th>Status</th>
+                  <th>Assign To</th>
                 </tr>
               </thead>
               <thead>
                 <tr>
-                  <th><input style="width:40px;" type="text" name="id"></th>
                   <th></th>
                   <th></th>
-                  <th><select id="serverity" data-width="160px">
-                    <option>all</option>
-                    <option>s1</option>
-                    <option>s2</option>
-                    <option>s3</option>
-                    <option>s4</option>
-                    <option>s5</option>
+                  <th>#<input style="width:40px;" type="text" name="id"></th>
+                  <th></th>
+                  <th></th>
+                  <th><select id="serverity" data-width="150px">
+                    <option>All</option>
+                    <option>S1</option>
+                    <option>S2</option>
+                    <option>S3</option>
+                    <option>S4</option>
+                    <option>S5</option>
                   </select></th>
                   <th>
-                  <select id="state" ata-width="160px">
-                    <option>all</option>
-                    <option>open</option>
-                    <option>close</option>
-                    <option>fixed</option>
+                  <select id="state" data-width="150px">
+                    <option>All</option>
+                    <option>Open</option>
+                    <option>Close</option>
+                    <option>Fixed</option>
                   </select>
                   </th>
                   <th>
-                    <select id="submitby" ata-width="160px">
+                    <select id="submitby" data-width="150px">
                     <option>changpeng</option>
                     <option>warren</option>
                     <option>qianyin</option>
@@ -120,6 +125,8 @@
               </thead>
               <tbody>
                 <tr>
+                  <td><span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;98</td>
+                  <td><span class="glyphicon glyphicon-eye-open"></span>&nbsp;99</td>
                   <td>DE890</td>
                   <td>group sync: some problems with update sync and initial sync</td>
                   <td>Us3249:[Unfinished][Continued] Ensure usergroup sync released for Feb release</td>
@@ -128,6 +135,8 @@
                   <td>Jing Huang</td>
                 </tr>
                 <tr>
+                  <td><span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;28</td>
+                  <td><span class="glyphicon glyphicon-eye-open"></span>&nbsp;70</td>
                   <td>DE1198</td>
                   <td>UI group: in entity group, click "assign role" or "assign resource", role or resource</td>
                   <td>US3675: [Unfinished] [Continued] [Continued] [Continued] Ensure usergroup sync released for Feb release</td>
@@ -136,6 +145,8 @@
                   <td>Jing Huang</td>
                 </tr>
                 <tr>
+                  <td><span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;45</td>
+                  <td><span class="glyphicon glyphicon-eye-open"></span>&nbsp;67</td>
                   <td>DE1206</td>
                   <td>User sync:import a user in App level, this user's status can't synced</td>
                   <td>US3675: [Unfinished] [Continued] [Continued] [Continued] Ensure usergroup sync released for Feb release</td>
@@ -144,27 +155,33 @@
                   <td>Jing Huang</td>
                 </tr>
                 <tr>
+                  <td><span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;70</td>
+                  <td><span class="glyphicon glyphicon-eye-open"></span>&nbsp;90</td>
                   <td>DE1206</td>
                   <td>User sync:import a user in App level, this user's status can't synced</td>
                   <td>US3705: [Unfinished] [Unfinished] [Continued] [Continued] Ensure usergroup sync </td>
                   <td>2 - Major Problem</td>
-                  <td>closed</td>
+                  <td>Closed</td>
                   <td>Li Bin</td>
                 </tr>
                 <tr>
+                  <td><span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;9</td>
+                  <td><span class="glyphicon glyphicon-eye-open"></span>&nbsp;20</td>
                   <td>DE1231</td>
                   <td>Group sync(from CEPM to DSX) UI: UI issues in create and edit group page</td>
                   <td>Group sync(from CEPM to DSX) UI: UI issues in create and edit group page</td>
                   <td>2 - Major Problem</td>
-                  <td>closed</td>
+                  <td>Closed</td>
                   <td>Li Bin</td>
                 </tr>
                 <tr>
+                  <td><span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;68</td>
+                  <td><span class="glyphicon glyphicon-eye-open"></span>&nbsp;95</td>
                   <td>DE1234</td>
                   <td>US3705: [Unfinished] [Unfinished] [Continued] [Continued] Ensure usergroup sync </td>
                   <td>Ensure usergroup sync released for Feb release</td>
                   <td>2 - Major Problem</td>
-                  <td>closed</td>
+                  <td>Closed</td>
                   <td>Huang Jing</td>
                 </tr>
               </tbody>
