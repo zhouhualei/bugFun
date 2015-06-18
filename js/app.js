@@ -10,7 +10,7 @@ $(function(){
             title : 'Project', //this is the top title bar of the popover. add some basic css
             html: 'true', //needed to show html of course
             content : 
-            '<h4>CEPM</h4><br/><span>CCSIDM</span><br/><span>ICAN</span>', //this is the content of the html box. add the image here or anything you want really.
+            '<span>CEPM</span><br/><span>CCSIDM</span><br/><span>ICAN</span>', //this is the content of the html box. add the image here or anything you want really.
             animation: false
         }).on("mouseenter", function () {
                     var _this = this;
