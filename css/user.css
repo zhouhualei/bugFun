@@ -1,11 +1,7 @@
-.content {
-  width: 90%;
-  padding-top: 40px;  
-}
 
 .avatar {
   border-radius: 6px;
-  width: 90%;
+  width: 85%;
   height: 250px;
 }
 
@@ -21,3 +17,35 @@
   padding-left: 50px;
 }
 
+.padding-box {
+  padding: 10px 10px;
+}
+
+.vcard-stat {
+  float: left;
+  width: 33.333%;
+  font-size: 11px;
+  text-transform: capitalize;
+}
+
+.vcard-stat-count {
+  display: block;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1;
+  color: #4078c0;
+}
+
+.text-muted {
+  color: #767676;
+}
+
+.bagde_list {
+  margin: -5px 0 0 -45px;
+}
+
+.bagde_item {
+  display: inline-block;
+  float: left;
+  margin: 5px 0 0 6px;
+}

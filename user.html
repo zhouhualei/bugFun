@@ -16,6 +16,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
+    <link href="css/global.css" rel="stylesheet">
     <link href="css/user.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -61,16 +62,80 @@
           <div><img class="avatar" height="300px" src="http://wwwin.cisco.com/dir/photo/zoom/yuw3.jpg"></div>
           <div><h2>Yu Wang</h2></div>
         </div>
+        <div class="clearfix"></div>
         <hr />
+
         <div>
+          <!-- tag -->
+          <code>cepm</code>
+          <code>security</code>
+          <code>java</code>
+          <code>db</code>
+          <code>senior</code>
+          <code>sync</code>
+        </div>
+        <div class="clearfix"></div>
+        <hr />
+
+        <div class="padding-box">
           <!-- score -->
+          <div class="vcard-stat">
+            <strong class="vcard-stat-count">80</strong>
+            <span class="text-muted">Score</span>
+          </div>
+          <div class="vcard-stat">
+            <strong class="vcard-stat-count">73</strong>
+            <span class="text-muted">Fixed</span>
+          </div>
+          <div class="vcard-stat">
+            <strong class="vcard-stat-count">90</strong>
+            <span class="text-muted">Submited</span>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <hr />
+
+        <div class="padding-box">
+          <!-- badge -->
+          <ul class="bagde_list clearfix">
+            <li class="bagde_item">
+              <a title="扬V耀5">
+                <img width="24" height="24" alt="扬V耀5" title="扬V耀5" src="images/badge1.gif" medalcard="1163">
+              </a>
+            </li>
+            <li class="bagde_item">
+              <a title="扬V耀5">
+                <img width="24" height="24" alt="扬V耀5" title="扬V耀5" src="images/badge2.gif" medalcard="1163">
+              </a>
+            </li>
+            <li class="bagde_item">
+              <a title="扬V耀5">
+                <img width="24" height="24" alt="扬V耀5" title="扬V耀5" src="images/badge3.gif" medalcard="1163">
+              </a>
+            </li>
+            <li class="bagde_item">
+              <a title="扬V耀5">
+                <img width="24" height="24" alt="扬V耀5" title="扬V耀5" src="images/badge4.gif" medalcard="1163">
+              </a>
+            </li>
+            <li class="bagde_item">
+              <a title="扬V耀5">
+                <img width="24" height="24" alt="扬V耀5" title="扬V耀5" src="images/badge5.gif" medalcard="1163">
+              </a>
+            </li>
+            <li class="bagde_item">
+              <a title="扬V耀5">
+                <img width="24" height="24" alt="扬V耀5" title="扬V耀5" src="images/badge6.gif" medalcard="1163">
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="col-md-9">
         <ul class="nav nav-tabs">
-          <li role="presentation" class="active"><a href="#">Fixed</a></li>
-          <li role="presentation"><a href="#">Follow</a></li>
-          <li role="presentation"><a href="#">Favorite</a></li>
+          <li role="presentation" id="fixed" class="active" onclick="selectTab(this);"><a href="#">Fixed</a></li>
+          <li role="presentation" id="follow" onclick="selectTab(this);"><a href="#">Follow</a></li>
+          <li role="presentation" id="favorite" onclick="selectTab(this);"><a href="#">Favorite</a></li>
         </ul>
         <div>
           <div>
@@ -184,8 +249,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="../../assets/js/vendor/holder.js"></script>
+    <script src="js/user.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
   </body>
