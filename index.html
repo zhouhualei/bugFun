@@ -45,7 +45,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><img src="images/ciscologo.jpg" style="height:30px; width=30px; margin:10px 100px 0 0;"></li>
+            <li><img src="images/ciscologo.jpg" style="height:30px; width=30px; margin:10px 100px 0 10px;"></li>
+            <li><span class="glyphicon glyphicon-search" aria-hidden="true"></span></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -54,37 +55,27 @@
       </div>
     </nav>
 
-    <div class="container-fluid">
+    <div class="container-fluid content">
       <div class="row">
         
         <div class="col-sm-10 col-md-offset-1  col-md-10 ">
 
-           <h1 class="page-header">Dashboard</h1>
+           <h3 class="page-header">Bug Filter Condition</h3>
 
           <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
+            <div class="col-xs-6 col-sm-1">
+              <div id="project">Project<span class="caret"></span></div>
             </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
+            <div class="col-xs-6 col-sm-1 placeholder">
+              <div id="track">Track<span class="caret"></span></div>
             </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
+            <div class="col-xs-6 col-sm-1 placeholder">
+              <div id="project">Release<span class="caret"></span></div>
             </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
+            <div class="col-xs-6 col-sm-1 placeholder">
+              <div id="project">...<span class="caret"></span></div>
             </div>
           </div>
-
-          <h2 class="sub-header">Section title</h2>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -102,7 +93,7 @@
                   <th><input style="width:40px;" type="text" name="id"></th>
                   <th></th>
                   <th></th>
-                  <th><select id="serverity" >
+                  <th><select id="serverity" data-width="160px">
                     <option>all</option>
                     <option>s1</option>
                     <option>s2</option>
@@ -110,8 +101,8 @@
                     <option>s4</option>
                     <option>s5</option>
                   </select></th>
-                  <th style="width:20px;">
-                  <select id="state" >
+                  <th>
+                  <select id="state" ata-width="160px">
                     <option>all</option>
                     <option>open</option>
                     <option>close</option>
@@ -119,7 +110,7 @@
                   </select>
                   </th>
                   <th>
-                    <select id="submitby" >
+                    <select id="submitby" ata-width="160px">
                     <option>changpeng</option>
                     <option>warren</option>
                     <option>qianyin</option>
@@ -153,98 +144,50 @@
                   <td>Jing Huang</td>
                 </tr>
                 <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
+                  <td>DE1206</td>
+                  <td>User sync:import a user in App level, this user's status can't synced</td>
+                  <td>US3705: [Unfinished] [Unfinished] [Continued] [Continued] Ensure usergroup sync </td>
+                  <td>2 - Major Problem</td>
+                  <td>closed</td>
+                  <td>Li Bin</td>
                 </tr>
                 <tr>
-                  <td>1,004</td>
-                  <td>dapibus</td>
-                  <td>diam</td>
-                  <td>Sed</td>
-                  <td>nisi</td>
+                  <td>DE1231</td>
+                  <td>Group sync(from CEPM to DSX) UI: UI issues in create and edit group page</td>
+                  <td>Group sync(from CEPM to DSX) UI: UI issues in create and edit group page</td>
+                  <td>2 - Major Problem</td>
+                  <td>closed</td>
+                  <td>Li Bin</td>
                 </tr>
                 <tr>
-                  <td>1,005</td>
-                  <td>Nulla</td>
-                  <td>quis</td>
-                  <td>sem</td>
-                  <td>at</td>
-                </tr>
-                <tr>
-                  <td>1,006</td>
-                  <td>nibh</td>
-                  <td>elementum</td>
-                  <td>imperdiet</td>
-                  <td>Duis</td>
-                </tr>
-                <tr>
-                  <td>1,007</td>
-                  <td>sagittis</td>
-                  <td>ipsum</td>
-                  <td>Praesent</td>
-                  <td>mauris</td>
-                </tr>
-                <tr>
-                  <td>1,008</td>
-                  <td>Fusce</td>
-                  <td>nec</td>
-                  <td>tellus</td>
-                  <td>sed</td>
-                </tr>
-                <tr>
-                  <td>1,009</td>
-                  <td>augue</td>
-                  <td>semper</td>
-                  <td>porta</td>
-                  <td>Mauris</td>
-                </tr>
-                <tr>
-                  <td>1,010</td>
-                  <td>massa</td>
-                  <td>Vestibulum</td>
-                  <td>lacinia</td>
-                  <td>arcu</td>
-                </tr>
-                <tr>
-                  <td>1,011</td>
-                  <td>eget</td>
-                  <td>nulla</td>
-                  <td>Class</td>
-                  <td>aptent</td>
-                </tr>
-                <tr>
-                  <td>1,012</td>
-                  <td>taciti</td>
-                  <td>sociosqu</td>
-                  <td>ad</td>
-                  <td>litora</td>
-                </tr>
-                <tr>
-                  <td>1,013</td>
-                  <td>torquent</td>
-                  <td>per</td>
-                  <td>conubia</td>
-                  <td>nostra</td>
-                </tr>
-                <tr>
-                  <td>1,014</td>
-                  <td>per</td>
-                  <td>inceptos</td>
-                  <td>himenaeos</td>
-                  <td>Curabitur</td>
-                </tr>
-                <tr>
-                  <td>1,015</td>
-                  <td>sodales</td>
-                  <td>ligula</td>
-                  <td>in</td>
-                  <td>libero</td>
+                  <td>DE1234</td>
+                  <td>US3705: [Unfinished] [Unfinished] [Continued] [Continued] Ensure usergroup sync </td>
+                  <td>Ensure usergroup sync released for Feb release</td>
+                  <td>2 - Major Problem</td>
+                  <td>closed</td>
+                  <td>Huang Jing</td>
                 </tr>
               </tbody>
             </table>
+                <nav class="col-md-4 col-md-offset-4">
+  <ul class="pagination" >
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="active"><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
           </div>
         </div>
       </div>
