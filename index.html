@@ -14,6 +14,8 @@
     <!-- Bootstrap core CSS -->
     <link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-select.css">
+
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
 
@@ -43,10 +45,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
+            <li><img src="images/ciscologo.jpg" style="height:30px; width=30px; margin:10px 100px 0 0;"></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -58,7 +57,7 @@
     <div class="container-fluid">
       <div class="row">
         
-        <div class="col-sm-10 col-sm-offset-1 col-md-10 main">
+        <div class="col-sm-10 col-md-offset-1  col-md-10 ">
 
            <h1 class="page-header">Dashboard</h1>
 
@@ -90,34 +89,68 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Requirement</th>
+                  <th>Serverity</th>
+                  <th>State</th>
+                  <th>Submitted By</th>
+                </tr>
+              </thead>
+              <thead>
+                <tr>
+                  <th><input style="width:40px;" type="text" name="id"></th>
+                  <th></th>
+                  <th></th>
+                  <th><select id="serverity" >
+                    <option>all</option>
+                    <option>s1</option>
+                    <option>s2</option>
+                    <option>s3</option>
+                    <option>s4</option>
+                    <option>s5</option>
+                  </select></th>
+                  <th style="width:20px;">
+                  <select id="state" >
+                    <option>all</option>
+                    <option>open</option>
+                    <option>close</option>
+                    <option>fixed</option>
+                  </select>
+                  </th>
+                  <th>
+                    <select id="submitby" >
+                    <option>changpeng</option>
+                    <option>warren</option>
+                    <option>qianyin</option>
+                  </select>
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
+                  <td>DE890</td>
+                  <td>group sync: some problems with update sync and initial sync</td>
+                  <td>Us3249:[Unfinished][Continued] Ensure usergroup sync released for Feb release</td>
+                  <td>2 - Major Problem</td>
+                  <td>Closed</td>
+                  <td>Jing Huang</td>
                 </tr>
                 <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
+                  <td>DE1198</td>
+                  <td>UI group: in entity group, click "assign role" or "assign resource", role or resource</td>
+                  <td>US3675: [Unfinished] [Continued] [Continued] [Continued] Ensure usergroup sync released for Feb release</td>
+                  <td>2 - Major Problem</td>
+                  <td>Closed</td>
+                  <td>Jing Huang</td>
                 </tr>
                 <tr>
-                  <td>1,003</td>
-                  <td>Integer</td>
-                  <td>nec</td>
-                  <td>odio</td>
-                  <td>Praesent</td>
+                  <td>DE1206</td>
+                  <td>User sync:import a user in App level, this user's status can't synced</td>
+                  <td>US3675: [Unfinished] [Continued] [Continued] [Continued] Ensure usergroup sync released for Feb release</td>
+                  <td>3 - Minor Problem</td>
+                  <td>Submitted</td>
+                  <td>Jing Huang</td>
                 </tr>
                 <tr>
                   <td>1,003</td>
@@ -222,9 +255,10 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="../../assets/js/vendor/holder.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
