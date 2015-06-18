@@ -1,0 +1,23 @@
+.content {
+  width: 90%;
+  padding-top: 40px;  
+}
+
+.avatar {
+  border-radius: 6px;
+  width: 90%;
+  height: 250px;
+}
+
+.margin-top {
+  margin-top: 20px;
+}
+
+.padding-top {
+  padding-top: 40px;
+}
+
+.padding-left {
+  padding-left: 50px;
+}
+
