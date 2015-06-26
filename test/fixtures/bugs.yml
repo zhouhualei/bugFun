@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  title: MyString
+  detail: MyText
+  severity: MyString
+  submiter: MyString
+  votes: 1
+  score: 1
+
+two:
+  id: 1
+  title: MyString
+  detail: MyText
+  severity: MyString
+  submiter: MyString
+  votes: 1
+  score: 1
