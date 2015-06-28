@@ -1,5 +1,10 @@
 class Bug < ActiveRecord::Base
 
+  has_many :comment_relationships
+  has_many :comments, through: :comment_relationships
+
+  belongs_to :assignee, foreign_key: "assignee_id", class_name: "User"
+
   scope :fixed, -> { where(status: "Fixed") }
   scope :new_status, -> { where(status: "New") }
   scope :assigned, -> { where(status: "Assigned") }

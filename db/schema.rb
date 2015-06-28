@@ -11,20 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150618121039) do
+ActiveRecord::Schema.define(version: 20150628154153) do
 
   create_table "bugs", force: true do |t|
     t.string   "title"
     t.text     "description"
     t.string   "severity"
     t.string   "submiter"
-    t.string   "assignee"
+    t.integer  "assignee_id"
     t.string   "status"
     t.integer  "views"
     t.float    "rating"
     t.string   "track"
     t.string   "project"
     t.string   "release"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comment_relationships", force: true do |t|
+    t.integer  "bug_id"
+    t.integer  "comment_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comments", force: true do |t|
+    t.text     "content"
+    t.integer  "author_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "uid"
+    t.string   "name"
+    t.string   "title"
+    t.string   "department"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -6,6 +6,36 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+users = User.create([
+  {
+    uid: "yuw3",
+    name: "Lucent Wang"
+  },
+  {
+    uid: "warzhou",
+    name: "Warren Zhou"
+  },
+  {
+    uid: "yangjian",
+    name: "Yang Jian"
+  },
+  {
+    uid: "yiqian",
+    name: "Yin Qian"
+  },
+  {
+    uid: "xuluo2",
+    name: "Xu Luo"
+  }
+])
+
+user_yuw3 = users[0]
+user_warzhou = users[1]
+user_yangjian = users[2]
+user_yiqian = users[3]
+user_xuluo2 = users[4]
+
+
 bugs = Bug.create([
   # {
   #   title: "",
@@ -28,7 +58,7 @@ bugs = Bug.create([
 # ",
   #   severity: "",
   #   submiter: "Polly Zhang",
-  #   assignee: "Yu Wang",
+  #   assignee: user_yuw3,
   #   status: "New",
   #   views: ,
   #   rating: ,
@@ -41,7 +71,7 @@ bugs = Bug.create([
     description: "Us3249:[Unfinished][Continued] Ensure usergroup sync released for Feb release",
     severity: "S1",
     submiter: "Jing Huang",
-    assignee: "Yu Wang",
+    assignee: user_yuw3,
     status: "Closed",
     views: 15,
     rating: 5,
@@ -54,7 +84,7 @@ bugs = Bug.create([
     description: "US3675: [Unfinished] [Continued] [Continued] [Continued] Ensure usergroup sync released for Feb release",
     severity: "S2",
     submiter: "Jing Huang",
-    assignee: "Yu Wang",
+    assignee: user_yuw3,
     status: "Closed",
     views: 17,
     rating: 4,
@@ -67,7 +97,7 @@ bugs = Bug.create([
     description: "US3675: [Unfinished] [Continued] [Continued] [Continued] Ensure usergroup sync released for Feb release",
     severity: "S3",
     submiter: "Jing Huang",
-    assignee: "None",
+    assignee: nil,
     status: "New",
     views: 3,
     rating: 4,
@@ -95,7 +125,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
     submiter: "Polly Zhang",
-    assignee: "Yu Wang",
+    assignee: user_yuw3,
     status: "New",
     views: 24,
     rating: 4,
@@ -123,7 +153,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S2",
     submiter: "Polly Zhang",
-    assignee: "Yu Wang",
+    assignee: user_yuw3,
     status: "New",
     views: 13,
     rating: 3,
@@ -151,7 +181,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S3",
     submiter: "Polly Zhang",
-    assignee: "None",
+    assignee: nil,
     status: "New",
     views: 3,
     rating: 2,
@@ -179,7 +209,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
     submiter: "Polly Zhang",
-    assignee: "None",
+    assignee: nil,
     status: "New",
     views: 56,
     rating: 5,
@@ -207,7 +237,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S3",
     submiter: "Polly Zhang",
-    assignee: "Xu Luo",
+    assignee: user_xuluo2,
     status: "New",
     views: 5,
     rating: 2,
@@ -235,7 +265,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S3",
     submiter: "Polly Zhang",
-    assignee: "Yu Wang",
+    assignee: user_yuw3,
     status: "New",
     views: 7,
     rating: 2,
@@ -263,7 +293,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S3",
     submiter: "Polly Zhang",
-    assignee: "Yi Qian",
+    assignee: user_yiqian,
     status: "New",
     views: 8,
     rating: 3,
@@ -291,7 +321,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S3",
     submiter: "Polly Zhang",
-    assignee: "None",
+    assignee: nil,
     status: "New",
     views: 3,
     rating: 1,
@@ -319,7 +349,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S2",
     submiter: "Polly Zhang",
-    assignee: "Yu Wang",
+    assignee: user_yuw3,
     status: "New",
     views: 18,
     rating: 4,
@@ -347,7 +377,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
     submiter: "Polly Zhang",
-    assignee: "Yu Wang",
+    assignee: user_yuw3,
     status: "Fixed",
     views: 8,
     rating: 4,
@@ -375,7 +405,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S2",
     submiter: "Polly Zhang",
-    assignee: "Warren Zhou",
+    assignee: user_warzhou,
     status: "Fixed",
     views: 2,
     rating: 3,
@@ -403,7 +433,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
     submiter: "Polly Zhang",
-    assignee: "Yu Wang",
+    assignee: user_yuw3,
     status: "Fixed",
     views: 9,
     rating: 5,
@@ -431,7 +461,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
     submiter: "Polly Zhang",
-    assignee: "Yu Wang",
+    assignee: user_yuw3,
     status: "Fixed",
     views: 3,
     rating: 5,
@@ -459,7 +489,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
     submiter: "Polly Zhang",
-    assignee: "Yu Wang",
+    assignee: user_yuw3,
     status: "Fixed",
     views: 6,
     rating: 4,
@@ -487,7 +517,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
     submiter: "Polly Zhang",
-    assignee: "Yu Wang",
+    assignee: user_yuw3,
     status: "Fixed",
     views: 6,
     rating: 5,
@@ -515,7 +545,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
     submiter: "Polly Zhang",
-    assignee: "Yu Wang",
+    assignee: user_yuw3,
     status: "Fixed",
     views: 35,
     rating: 3,
@@ -543,7 +573,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
     submiter: "Polly Zhang",
-    assignee: "Yu Wang",
+    assignee: user_yuw3,
     status: "Fixed",
     views: 68,
     rating: 5,
@@ -571,7 +601,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
     submiter: "Polly Zhang",
-    assignee: "Yu Wang",
+    assignee: user_yuw3,
     status: "Fixed",
     views: 1,
     rating: 3,
@@ -599,7 +629,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S2",
     submiter: "Polly Zhang",
-    assignee: "Yu Wang",
+    assignee: user_yuw3,
     status: "Fixed",
     views: 8,
     rating: 4,
@@ -627,7 +657,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
     submiter: "Polly Zhang",
-    assignee: "Yu Wang",
+    assignee: user_yuw3,
     status: "Assigned",
     views: 78,
     rating: 5,
@@ -655,7 +685,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
     submiter: "Polly Zhang",
-    assignee: "Yu Wang",
+    assignee: user_yuw3,
     status: "Assigned",
     views: 88,
     rating: 5,
@@ -683,7 +713,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
     submiter: "Polly Zhang",
-    assignee: "Yu Wang",
+    assignee: user_yuw3,
     status: "Assigned",
     views: 88,
     rating: 5,
@@ -711,7 +741,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S2",
     submiter: "Polly Zhang",
-    assignee: "Yu Wang",
+    assignee: user_yuw3,
     status: "Assigned",
     views: 38,
     rating: 3,
@@ -739,7 +769,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
     submiter: "Polly Zhang",
-    assignee: "Yu Wang",
+    assignee: user_yuw3,
     status: "Assigned",
     views: 98,
     rating: 5,
@@ -767,12 +797,38 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
     submiter: "Polly Zhang",
-    assignee: "Yu Wang",
+    assignee: user_yuw3,
     status: "Assigned",
     views: 78,
     rating: 5,
     project: "ccs",
     track: "Service Supply Chain",
     release: "Q1FY16"
+  }
+])
+
+bug1 = bugs[0]
+
+
+comments = Comment.create([
+  {
+    content: "I am not sure of this bug. Is this related to PLSQL?",
+    author: user_yuw3,
+    bug: bug1
+  },
+  {
+    content: "Confirmed with Yang Jian, he is an DB expert.",
+    author: user_warzhou,
+    bug: bug1
+  },
+  {
+    content: "I think there is some inconsistence in your data.",
+    author: user_yangjian,
+    bug: bug1
+  },
+  {
+    content: "I see, Thanks, Jian, I know how to fix it now.",
+    author: user_yuw3,
+    bug: bug1
   }
 ])
