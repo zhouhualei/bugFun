@@ -1,145 +1,215 @@
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap-select.css">
-    <link href="/css/dashboard.css" rel="stylesheet">
+  <!--<link rel="stylesheet" href="/css/font-awesome.css">-->
+  <link rel="stylesheet" type="text/css" href="/css/twitter.css"/>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">Bug FUNed</a>
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="/bugs">Bugs</a></li>
-            <li><a href="/bugs/report">Report</a></li>
-          </ul>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><img src="images/ciscologo.jpg" style="height:30px; width=30px; margin:10px 100px 0 10px;"></li>
-            <li><span class="glyphicon glyphicon-search" aria-hidden="true"></span></li>
-          </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
-        </div>
-      </div>
-    </nav>
+	<!-- 搜索条件 -->
+	<div style="width:100%; height:56px;background-color:#e5e5e5;margin:46px 0px 0px 0px;padding: 1px;">
+		<table id="sort_table" style="margin:15px 360px;width:50%;height:56px">
+			<thead>
+				<td style="width:20%;">Sort By:</td>
+				<td class="" style=""><a href="#">Scores</a></td>
+				<td class="" style=""><a href="#">Relevance</a></td>
+				<td class="" style=""><a href="#">Views</a></td>
+				<td class="" style=""><a href="#">Time</a></td>
+			</thead>
+		</table>
+	</div>
 
-    <div class="container-fluid content">
-      <div class="row">
-        
-        <div class="col-sm-10 col-md-offset-1  col-md-10 ">
-          <div class="row placeholders">
-          <div class="col-xs-6 col-sm-2 placeholder">
-              <div id="release" style="float:left;">Release<span class="caret"></span></div>
-            </div>
-            <div class="col-xs-6 col-sm-2">
-              <div id="project">Project<span class="caret"></span></div>
-            </div>
-            <div class="col-xs-6 col-sm-2 placeholder">
-              <div id="track">Track<span class="caret"></span></div>
-            </div>
-            
-            <div class="col-xs-6 col-sm-2 placeholder">
-              
-            </div>
-          </div>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Score</th>
-                  <th>Views</th>
-                  <th>ID</th>
-                  <th>Summary</th>
-                  <th>Severity</th>
-                  <th>Status</th>
-                  <th>Assign To</th>
-                </tr>
-              </thead>
-              <thead>
-                <tr>
-                  <th></th>
-                  <th></th>
-                  <th><input style="width:40px;" type="text" name="id"></th>
-                  <th></th>
-                  <th><select id="serverity" data-width="150px">
-                    <option>All</option>
-                    <option>S1</option>
-                    <option>S2</option>
-                    <option>S3</option>
-                    <option>S4</option>
-                    <option>S5</option>
-                  </select></th>
-                  <th>
-                  <select id="state" data-width="150px">
-                    <option>All</option>
-                    <option>Open</option>
-                    <option>Close</option>
-                    <option>Fixed</option>
-                  </select>
-                  </th>
-                  <th>
-                    <select id="submitby" data-width="150px">
-                    <option>All</option>
-                    <option>changpeng</option>
-                    <option>warren</option>
-                    <option>qianyin</option>
-                  </select>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <% @bugs.each do |bug| %>
-                <tr>
-                  <td><span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;<%= bug.rating %></td>
-                  <td><span class="glyphicon glyphicon-eye-open"></span>&nbsp;<%= bug.views %></td>
-                  <td><a href="/bugs/<%= bug.id %>"><%= bug.id %></a></td>
-                  <td><a href="/bugs/<%= bug.id %>"><%= bug.title %></a></td>
-                  <td><%= bug.severity %></td>
-                  <td><%= bug.status %></td>
-                  <td>
-                    <% if bug.assignee != "None" %>
-                      <a href="/users/1?tab=fixed"><%= bug.assignee %></a>
-                    <% else %>
-                      <a href="/bugs/1" class="btn btn-primary">Let me fix it!</a> 
-                    <% end %>
-                        
-                  </td>
-                </tr>
-                <% end %>
-              </tbody>
-            </table>
-              <nav class="col-md-4 col-md-offset-4">
-                <ul class="pagination" >
-                  <li>
-                    <a href="#" aria-label="Previous">
-                      <span aria-hidden="true">&laquo;</span>
-                    </a>
-                  </li>
-                  <li class="active"><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                  <li>
-                    <a href="#" aria-label="Next">
-                      <span aria-hidden="true">&raquo;</span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/ie-emulation-modes-warning.js"></script>
-    <script src="/js/bootstrap-select.js"></script>
-    <script src="/js/ie10-viewport-bug-workaround.js"></script>
-    <script src="/js/app.js"></script>
-
+	<!-- 盛放微博的容器 -->
+	<div class="container" style="margin:6px auto 0;backgroud-color:#fff;" >
+		<!-- 接下来是15条微博 -->
+		<div class="tweet firsttweet">
+			<img src="/images/3.jpg" alt="" class="float-left">
+			<div class="content float-left">
+				<span class="username"><a href="#">Steve Wozniak</a></span>
+				<p>题外话：LZ也是走过一些国家，相比之下，印度应该算最不适宜旅行的国家，主要是基础设施太差，除了火车没什么好选择的交通工具，在不通火车的地方，汽车效率太低，而且很多长途客车喜欢走夜班，增加了安全隐患。但尽管如此，来旅行的人还是趋之若无，谁叫它是四大古国之一呢。总之来印度旅行最好吃苦的准备。 </p>
+				
+				<span class="time">4分钟前</span>
+				<span class="view"><a href="#" class="link"><img src=".//fonts/eye1.png" style="margin:-2px 0px;height:12px;width:12px;">&nbsp;views(10)</a></span>
+				<span class="heart"><a href="#" class="link"><img src=".//fonts/heart1.png" style="margin:-2px 0px;height:12px;width:12px;">&nbsp;(10)</a></span>
+				<span class="comment"><a href="#" class="link"><img src=".//fonts/comment1.png" style="margin:-2px 0px;height:12px;width:12px;">&nbsp;comments(10)</a></span>
+				<span class="star"><a href="#" class="link"><img src=".//fonts/star1.png" style="margin:-2px 0px;height:12px;width:12px;">&nbsp;scores(10)</a></span>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		
+		<div class="tweet">
+			<img src="/images/15.jpg" alt="" class="float-left">
+			<div class="content float-left">
+				<span class="username"><a href="#">Steve Jobs</a></span>
+				<p>题外话：LZ也是走过一些国家，相比之下，印度应该算最不适宜旅行的国家，主要是基础设施太差，除了火车没什么好选择的交通工具，在不通火车的地方，汽车效率太低，而且很多长途客车喜欢走夜班，增加了安全隐患。但尽管如此，来旅行的人还是趋之若无，谁叫它是四大古国之一呢。总之来印度旅行最好吃苦的准备。 </p>
+				<span class="time">4分钟前</span>
+				<a href="#" class="link">转发(10)</a>
+				<a href="#" class="link">评论(35)</a>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	
+		<div class="tweet">
+			<img src="/images/4.jpg" alt="" class="float-left">
+			<div class="content float-left">
+				<span class="username"><a href="#">Bill Gates</a></span>
+				<p>言归正转，首先介绍下LZ所走路线我从斯里兰卡科伦坡乘船前往印度Tuticorin港(关于船务信息可查下我写的关于斯里兰卡旅行信息)—Madurai—Chennai—Delhi—Amritsar—Jammu(进入克什米尔)—Srinagar—Kargil—Leh(进入拉达克)—Varanasi—Siligury—Darjeeling—Kolkata—Puri—Koraput—Jagdalpur—Raipur—Gorakhpur—Sunauli(出境进入尼泊尔) </p>
+				<span class="time">4分钟前</span>
+				<a href="#" class="link">转发(10)</a>
+				<a href="#" class="link">评论(35)</a>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		
+		<div class="tweet">
+			<img src="/images/5.jpg" alt="" class="float-left">
+			<div class="content float-left">
+				<span class="username"><a href="#">John Ma</a></span>
+				<p>货币及银行：美元对印度卢比1：49，大城市和旅游城市会有货币兑换点，其他地方几乎没有，银联卡无法在印度取款，请备好美元现金或使用带有VISA或万事达标志的信用卡或借记卡取现。印度的ATM取款机有时也会失灵，尤其在偏远的中部山区，拉达克等地，所以如果前往这些地方请务必备足现金。 </p>
+				<span class="time">4分钟前</span>
+				<a href="#" class="link">转发(10)</a>
+				<a href="#" class="link">评论(35)</a>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		
+		<div class="tweet">
+			<img src="/images/6.jpg" alt="" class="float-left">
+			<div class="content float-left">
+				<span class="username"><a href="#">Jack</a></span>
+				<p>签证：LZ是在泰国曼谷的印度签证中心办理的，大约总费用400多人民币，5个工作日后出签，不需要什么证明和材料，拿着护照和照片去就行了。一般一次可申请3个月的有效期。 </p>
+				<span class="time">4分钟前</span>
+				<a href="#" class="link">转发(10)</a>
+				<a href="#" class="link">评论(35)</a>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		
+		<div class="tweet">
+			<img src="/images/7.jpg" alt="" class="float-left">
+			<div class="content float-left">
+				<span class="username"><a href="#">Jack</a></span>
+				<p>交通：印度城市间往来主要靠火车，我看见很多同学自己提前在网上订票，其实最省事的办法是去位于新德里火车站的INTERNATIONAL TOURIST BUREAU买票，因为那里只卖票给外国人，而且很多紧张车次会对外国旅行者留有部分铺位，你只能在这个地方买的到。加尔各大也有，只不过不在火车站里，其他地方几乎没有专门给外国人售票的地方。火车尽量选择空调3等车厢以上。 </p>
+				<span class="time">4分钟前</span>
+				<a href="#" class="link">转发(10)</a>
+				<a href="#" class="link">评论(35)</a>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="tweet">
+			<img src="/images/8.jpg" alt="" class="float-left">
+			<div class="content float-left">
+				<span class="username"><a href="#">Jack</a></span>
+				<p>交通：印度城市间往来主要靠火车，我看见很多同学自己提前在网上订票，其实最省事的办法是去位于新德里火车站的INTERNATIONAL TOURIST BUREAU买票，因为那里只卖票给外国人，而且很多紧张车次会对外国旅行者留有部分铺位，你只能在这个地方买的到。加尔各大也有，只不过不在火车站里，其他地方几乎没有专门给外国人售票的地方。火车尽量选择空调3等车厢以上。 </p>
+				<span class="time">4分钟前</span>
+				<a href="#" class="link">转发(10)</a>
+				<a href="#" class="link">评论(35)</a>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="tweet">
+			<img src="/images/9.jpg" alt="" class="float-left">
+			<div class="content float-left">
+				<span class="username"><a href="#">Jack</a></span>
+				<p>交通：印度城市间往来主要靠火车，我看见很多同学自己提前在网上订票，其实最省事的办法是去位于新德里火车站的INTERNATIONAL TOURIST BUREAU买票，因为那里只卖票给外国人，而且很多紧张车次会对外国旅行者留有部分铺位，你只能在这个地方买的到。加尔各大也有，只不过不在火车站里，其他地方几乎没有专门给外国人售票的地方。火车尽量选择空调3等车厢以上。 </p>
+				<span class="time">4分钟前</span>
+				<a href="#" class="link">转发(10)</a>
+				<a href="#" class="link">评论(35)</a>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="tweet">
+			<img src="/images/12.jpg" alt="" class="float-left">
+			<div class="content float-left">
+				<span class="username"><a href="#">Jack</a></span>
+				<p>交通：印度城市间往来主要靠火车，我看见很多同学自己提前在网上订票，其实最省事的办法是去位于新德里火车站的INTERNATIONAL TOURIST BUREAU买票，因为那里只卖票给外国人，而且很多紧张车次会对外国旅行者留有部分铺位，你只能在这个地方买的到。加尔各大也有，只不过不在火车站里，其他地方几乎没有专门给外国人售票的地方。火车尽量选择空调3等车厢以上。 </p>
+				<span class="time">4分钟前</span>
+				<a href="#" class="link">转发(10)</a>
+				<a href="#" class="link">评论(35)</a>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="tweet">
+			<img src="/images/11.jpg" alt="" class="float-left">
+			<div class="content float-left">
+				<span class="username"><a href="#">Jack</a></span>
+				<p>交通：印度城市间往来主要靠火车，我看见很多同学自己提前在网上订票，其实最省事的办法是去位于新德里火车站的INTERNATIONAL TOURIST BUREAU买票，因为那里只卖票给外国人，而且很多紧张车次会对外国旅行者留有部分铺位，你只能在这个地方买的到。加尔各大也有，只不过不在火车站里，其他地方几乎没有专门给外国人售票的地方。火车尽量选择空调3等车厢以上。 </p>
+				<span class="time">4分钟前</span>
+				<a href="#" class="link">转发(10)</a>
+				<a href="#" class="link">评论(35)</a>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="tweet">
+			<img src="/images/10.jpg" alt="" class="float-left">
+			<div class="content float-left">
+				<span class="username"><a href="#">John Ma</a></span>
+				<p>货币及银行：美元对印度卢比1：49，大城市和旅游城市会有货币兑换点，其他地方几乎没有，银联卡无法在印度取款，请备好美元现金或使用带有VISA或万事达标志的信用卡或借记卡取现。印度的ATM取款机有时也会失灵，尤其在偏远的中部山区，拉达克等地，所以如果前往这些地方请务必备足现金。 </p>
+				<span class="time">4分钟前</span>
+				<a href="#" class="link">转发(10)</a>
+				<a href="#" class="link">评论(35)</a>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="tweet">
+			<img src="/images/13.jpg" alt="" class="float-left">
+			<div class="content float-left">
+				<span class="username"><a href="#">John Ma</a></span>
+				<p>货币及银行：美元对印度卢比1：49，大城市和旅游城市会有货币兑换点，其他地方几乎没有，银联卡无法在印度取款，请备好美元现金或使用带有VISA或万事达标志的信用卡或借记卡取现。印度的ATM取款机有时也会失灵，尤其在偏远的中部山区，拉达克等地，所以如果前往这些地方请务必备足现金。 </p>
+				<span class="time">4分钟前</span>
+				<a href="#" class="link">转发(10)</a>
+				<a href="#" class="link">评论(35)</a>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="tweet">
+			<img src="/images/14.jpg" alt="" class="float-left">
+			<div class="content float-left">
+				<span class="username"><a href="#">John Ma</a></span>
+				<p>货币及银行：美元对印度卢比1：49，大城市和旅游城市会有货币兑换点，其他地方几乎没有，银联卡无法在印度取款，请备好美元现金或使用带有VISA或万事达标志的信用卡或借记卡取现。印度的ATM取款机有时也会失灵，尤其在偏远的中部山区，拉达克等地，所以如果前往这些地方请务必备足现金。 </p>
+				<span class="time">4分钟前</span>
+				<a href="#" class="link">转发(10)</a>
+				<a href="#" class="link">评论(35)</a>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="tweet">
+			<img src="/images/15.jpg" alt="" class="float-left">
+			<div class="content float-left">
+				<span class="username"><a href="#">John Ma</a></span>
+				<p>货币及银行：美元对印度卢比1：49，大城市和旅游城市会有货币兑换点，其他地方几乎没有，银联卡无法在印度取款，请备好美元现金或使用带有VISA或万事达标志的信用卡或借记卡取现。印度的ATM取款机有时也会失灵，尤其在偏远的中部山区，拉达克等地，所以如果前往这些地方请务必备足现金。 </p>
+				<span class="time">4分钟前</span>
+				<a href="#" class="link">转发(10)</a>
+				<a href="#" class="link">评论(35)</a>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="loadmore">
+			<a href="#">加载更多...</a>
+		</div>
+	</div>
+	<script type="text/javascript">
+	$(function(){
+		$(".container .tweet .content .heart").mouseover(function (){
+			$(this).find('img').attr('src', '/fonts/heart2.gif');
+		}).mouseout(function (){
+			$(this).find('img').attr('src', '/fonts/heart1.png');
+		});
+		$(".container .tweet .content .view").mouseover(function (){
+			$(this).find('img').attr('src', '/fonts/eye2.png');
+		}).mouseout(function (){
+			$(this).find('img').attr('src', '/fonts/eye1.png');
+		});
+		$(".container .tweet .content .star").mouseover(function (){
+			$(this).find('img').attr('src', '/fonts/star2.png');
+		}).mouseout(function (){
+			$(this).find('img').attr('src', '/fonts/star1.png');
+		});
+		$(".container .tweet .content .comment").mouseover(function (){
+			$(this).find('img').attr('src', '/fonts/comment2.png');
+		}).mouseout(function (){
+			$(this).find('img').attr('src', '/fonts/comment1.png');
+		});
+		$(".container .tweet .content .up").mouseover(function (){
+			$(this).find('img').attr('src', '/fonts/up2.png');
+		}).mouseout(function (){
+			$(this).find('img').attr('src', '/fonts/up1.png');
+		});
+	});
+	</script>

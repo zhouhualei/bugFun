@@ -6,21 +6,20 @@ class UsersController < ApplicationController
 
     @tab = params[:tab] || "fixed"
 
-    username = "Yu Wang"
+    @user = User.find(params[:id])
     @bugs = []
-    @submitted = Bug.bugs_submited_by(username)
-    @fixed = Bug.bugs_fixed_by(username)
-    @followed = Bug.bugs_followed_by
-    @favorited = Bug.bugs_favorite_by
+    @submitted = Bug.submited_by(@user)
+    @fixed = Bug.fixed_by(@user)
+    @followed = @user.followings
+    @favorited = @user.bookmarkings
+    @user_score = @fixed.collect{|b| b.score}.sum
 
     if(@tab == "fixed")
-      @bugs = Bug.bugs_fixed_by(username)
+      @bugs = @fixed
     elsif(@tab == "followed")
-      @bugs = Bug.bugs_followed_by
+      @bugs = @followed
     elsif(@tab == "favorited")
-      @bugs = Bug.bugs_favorite_by
+      @bugs = @favorited
     end
-
-    p @bugs
   end
 end

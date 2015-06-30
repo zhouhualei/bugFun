@@ -1,0 +1,145 @@
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-select.css">
+    <link href="/css/dashboard.css" rel="stylesheet">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Bug FUNed</a>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/bugs">Bugs</a></li>
+            <li><a href="/bugs/report">Report</a></li>
+          </ul>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><img src="images/ciscologo.jpg" style="height:30px; width=30px; margin:10px 100px 0 10px;"></li>
+            <li><span class="glyphicon glyphicon-search" aria-hidden="true"></span></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid content">
+      <div class="row">
+        
+        <div class="col-sm-10 col-md-offset-1  col-md-10 ">
+          <div class="row placeholders">
+          <div class="col-xs-6 col-sm-2 placeholder">
+              <div id="release" style="float:left;">Release<span class="caret"></span></div>
+            </div>
+            <div class="col-xs-6 col-sm-2">
+              <div id="project">Project<span class="caret"></span></div>
+            </div>
+            <div class="col-xs-6 col-sm-2 placeholder">
+              <div id="track">Track<span class="caret"></span></div>
+            </div>
+            
+            <div class="col-xs-6 col-sm-2 placeholder">
+              
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Score</th>
+                  <th>Views</th>
+                  <th>ID</th>
+                  <th>Summary</th>
+                  <th>Severity</th>
+                  <th>Status</th>
+                  <th>Assign To</th>
+                </tr>
+              </thead>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <th><input style="width:40px;" type="text" name="id"></th>
+                  <th></th>
+                  <th><select id="serverity" data-width="150px">
+                    <option>All</option>
+                    <option>S1</option>
+                    <option>S2</option>
+                    <option>S3</option>
+                    <option>S4</option>
+                    <option>S5</option>
+                  </select></th>
+                  <th>
+                  <select id="state" data-width="150px">
+                    <option>All</option>
+                    <option>Open</option>
+                    <option>Close</option>
+                    <option>Fixed</option>
+                  </select>
+                  </th>
+                  <th>
+                    <select id="submitby" data-width="150px">
+                    <option>All</option>
+                    <option>changpeng</option>
+                    <option>warren</option>
+                    <option>qianyin</option>
+                  </select>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @bugs.each do |bug| %>
+                <tr>
+                  <td><span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;<%= bug.score %></td>
+                  <td><span class="glyphicon glyphicon-eye-open"></span>&nbsp;<%= bug.views %></td>
+                  <td><a href="/bugs/<%= bug.id %>"><%= bug.id %></a></td>
+                  <td><a href="/bugs/<%= bug.id %>"><%= bug.title %></a></td>
+                  <td><%= bug.severity %></td>
+                  <td><%= bug.status %></td>
+                  <td>
+                    <% unless bug.assignee.nil? %>
+                      <a href="/users/<%= bug.assignee.id %>?tab=fixed"><%= bug.assignee.name %></a>
+                    <% else %>
+                      <a href="/bugs/<%= bug.id %>" class="btn btn-primary">Let me fix it!</a> 
+                    <% end %>
+                        
+                  </td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+              <nav class="col-md-4 col-md-offset-4">
+                <ul class="pagination" >
+                  <li>
+                    <a href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="active"><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">5</a></li>
+                  <li>
+                    <a href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/ie-emulation-modes-warning.js"></script>
+    <script src="/js/bootstrap-select.js"></script>
+    <script src="/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="/js/app.js"></script>
+

@@ -1,4 +1,6 @@
 
-function selectTab(tab){
-  window.location = "/users/2?tab=" + tab;
+function selectTab(uid, tab){
+  url = "/users/" + uid + "?tab=" + tab;
+  console.log(url)
+  window.location = url;
 }

@@ -6,8 +6,8 @@
     <div class="content container-fluid" style="margin-top:40px;">
       <div class="col-md-3">
         <div>
-          <div><img class="avatar" height="300px" src="http://wwwin.cisco.com/dir/photo/zoom/yuw3.jpg"></div>
-          <div><h2>Yu Wang</h2></div>
+          <div><img class="avatar" height="300px" src="http://wwwin.cisco.com/dir/photo/zoom/<%= @user.uid %>.jpg"></div>
+          <div><h2><%= @user.name %></h2></div>
         </div>
         <div class="clearfix"></div>
         <hr />
@@ -27,15 +27,15 @@
         <div class="padding-box">
           <!-- score -->
           <div class="vcard-stat">
-            <strong class="vcard-stat-count">80</strong>
+            <strong class="vcard-stat-count"><%= @user_score.round(0) %></strong>
             <span class="text-muted">Score</span>
           </div>
           <div class="vcard-stat">
-            <strong class="vcard-stat-count">73</strong>
+            <strong class="vcard-stat-count"><%= @fixed.count %></strong>
             <span class="text-muted">Fixed</span>
           </div>
           <div class="vcard-stat">
-            <strong class="vcard-stat-count">90</strong>
+            <strong class="vcard-stat-count"><%= @submitted.count %></strong>
             <span class="text-muted">Submited</span>
           </div>
         </div>
@@ -80,9 +80,9 @@
       </div>
       <div class="col-md-9">
         <ul class="nav nav-tabs">
-          <li role="presentation" id="fixed" onclick="selectTab($(this).attr('id'));"><a href="#">Fixed</a></li>
-          <li role="presentation" id="followed" onclick="selectTab($(this).attr('id'));"><a href="#">Follow</a></li>
-          <li role="presentation" id="favorited" onclick="selectTab($(this).attr('id'));"><a href="#">Favorite</a></li>
+          <li role="presentation" id="fixed" onclick="selectTab(<%= @user.id %>, $(this).attr('id'));"><a href="#">Fixed</a></li>
+          <li role="presentation" id="followed" onclick="selectTab(<%= @user.id %>, $(this).attr('id'));"><a href="#">Follow</a></li>
+          <li role="presentation" id="favorited" onclick="selectTab(<%= @user.id %>, $(this).attr('id'));"><a href="#">Favorite</a></li>
         </ul>
         <div>
           <div>
@@ -102,7 +102,7 @@
                 <tbody>
                   <% @bugs.each do |bug| %>
                     <tr>
-                      <td><%= bug.rating %></td>
+                      <td><%= bug.score %></td>
                       <td><%= bug.views %></td>
                       <td><%= bug.id %></td>
                       <td><%= bug.title %></td>
