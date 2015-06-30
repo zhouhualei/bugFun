@@ -1,0 +1,173 @@
+.clearfix{
+	clear: both;
+}
+.float-left{
+	float: left;
+}
+.float-right{
+	float: right;
+}
+.over-flow{
+	overflow: hidden;
+}
+a{
+	text-decoration: none;
+}
+
+body{
+	margin: 0px;
+	background-image: url(../img/bg.png);
+}
+
+.navbar{
+	height: 46px;
+	width: 100%;
+	text-align: center;
+	background-color: #000;
+	position: fixed;
+	top: 0px;
+}
+
+.container{
+	margin: 66px auto 0px;
+	padding: 10px 0px;
+	width: 740px;
+	border-radius: 3px;
+	//height: 1000px;
+	background-color: #fff;
+}
+
+.container .tweet{
+	margin: 10px 10px 0px;
+	padding-bottom: 10px;
+	border-bottom: 1px dashed #7f8c8d;
+}
+
+.container .firsttweet{
+	font-family: MicroSoft YaHei;
+	margin: 10px 10px 0px;
+	padding-bottom: 10px;
+	border-bottom: 1px dashed #7f8c8d;
+}
+
+.container .tweet img{
+	margin: 0px;
+	width: 48px;
+	margin: 6px 0px;
+	border-radius: 25px;
+}
+
+.container .tweet .content{
+	margin:0px;
+	width: 672px
+}
+.container .tweet .content .username{
+	margin: 0px;
+}
+.container .tweet .content .username a{
+	margin: 0px;
+	color: #000;
+	font-family: MicroSoft YaHei;
+	font-size: 16px;
+	text-decoration: none;
+	margin: 0px 10px;
+}
+.container .tweet .content .username a:hover{
+	color: gold;
+}
+
+.container .tweet .content p{
+	margin: 7px 0px 7px 10px;
+	font-family: MicroSoft YaHei;
+	font-size: 14px;
+	color: #000;
+	text-align: adjust;
+	line-height: 1.8;
+}
+/* .container .tweet .content p:hover{
+	color: #fff;
+} */
+
+
+.container .tweet .content .time{
+	margin:0px;
+	color: #7f8c8d;
+	font-family: MicroSoft YaHei;
+	font-size: 12px;
+	margin: 0px 10px;
+}
+.container .tweet .content .link{
+	margin:0px;
+	color: #7f8c8d;
+	font-family: MicroSoft YaHei;
+	font-size: 12px;
+	text-decoration: none;
+	margin: 0px 10px;
+}
+.container .tweet .content .link:hover{
+	text-decoration: none;
+	color: #fa7d3c;
+}
+
+.loadmore{
+	margin: 0px auto; 
+	font-family: MicroSoft YaHei;
+	height: 36px;
+	line-height: 36px;
+	width: 740px;
+	-webkit-border-radius: 7px;
+}
+
+.loadmore a{
+	display: block;
+	
+	text-align: center;
+	text-decoration: none;
+}
+.loadmore a:hover{
+	text-decoration: underline;
+}
+
+.navbar .logo{
+	color: #99999;
+	font-size: 28px;
+	line-height: 46px;
+	margin-right: 20px;
+	margin-top: 10px;
+	margin-left: 314.5px;
+}
+.navbar .nav{
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+.navbar .nav li{
+	line-height: 46px;
+}
+
+.navbar .nav li a{
+	font-size: 20px;
+	color: white;
+	padding: 0px 10px 8px;
+}
+.navbar .nav li a:hover, .navbar .nav .home a{
+	border-bottom: 3px solid #555;
+	color: #fffs;
+	-webkit-transition: 0.2s;
+}
+
+.navbar .cog{
+	margin-right: 310.5px;
+}
+
+.navbar .nav-form .search-input{
+	margin-top: 11px;
+	height: 25px;
+	width: 160px;
+	padding: 0px 20px;
+	border-radius: 18px;
+	border: none;
+	outline: none;
+}
+
+
