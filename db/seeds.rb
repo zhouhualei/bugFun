@@ -832,3 +832,18 @@ comments = Comment.create([
     bug: bug1
   }
 ])
+
+
+user_yuw3.followings = [bug1]
+user_yuw3.bookmarkings = [bug1]
+
+rating1 = RatingRelationship.new ({
+  user: user_yuw3,
+  bug: bug1,
+  score: 4
+})
+
+user_yuw3.rating_relationships = [rating1]
+user_yuw3.save
+
+

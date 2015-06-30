@@ -3,6 +3,16 @@ class Bug < ActiveRecord::Base
   has_many :comment_relationships
   has_many :comments, through: :comment_relationships
 
+  has_many :follow_relationships
+  has_many :followers, through: :follow_relationships
+
+  has_many :bookmark_relationships
+  has_many :bookmark_users, through: :bookmark_relationships, source: :user
+
+  has_many :rating_relationships
+  has_many :rated_bys, through: :rating_relationships, source: :user
+
+
   belongs_to :assignee, foreign_key: "assignee_id", class_name: "User"
 
   scope :fixed, -> { where(status: "Fixed") }
