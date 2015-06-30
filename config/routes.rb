@@ -6,6 +6,17 @@ Up::Application.routes.draw do
   resources :users
   resources :bugs
 
+  resources :follow_relationships
+  delete 'follow_relationships' => 'follow_relationships#destroy'
+
+  resources :rating_relationships
+  delete 'rating_relationships' => 'rating_relationships#destroy'
+
+  resources :bookmark_relationships
+  delete 'bookmark_relationships' => 'bookmark_relationships#destroy'
+
+  resources :comments
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

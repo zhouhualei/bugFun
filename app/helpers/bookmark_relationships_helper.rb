@@ -1,0 +1,2 @@
+module BookmarkRelationshipsHelper
+end

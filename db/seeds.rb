@@ -799,6 +799,14 @@ bug17 = bugs[16]
 bug18 = bugs[17]
 bug19 = bugs[18]
 bug20 = bugs[19]
+bug21 = bugs[20]
+bug22 = bugs[21]
+bug23 = bugs[22]
+bug24 = bugs[23]
+bug25 = bugs[24]
+bug26 = bugs[25]
+bug27 = bugs[26]
+bug28 = bugs[27]
 
 comments = Comment.create([
   {
@@ -825,69 +833,86 @@ comments = Comment.create([
 
 
 user_yuw3.followings = [bug1, bug2, bug4, bug6, bug9]
-user_yuw3.bookmarkings = [bug1, bug3, bug5, bug6, bug8, bug10]
+user_warzhou.followings = [bug1, bug8, bug16, bug18, bug16]
+user_yangjian.followings = [bug1, bug3, bug7, bug13, bug15]
+user_yiqian.followings = [bug1, bug7, bug14, bug21, bug28]
+user_xuluo2.followings = [bug1, bug23, bug24, bug26, bug27]
 
-rating1 = RatingRelationship.new ({
+user_yuw3.bookmarkings = [bug1, bug13, bug15, bug16, bug18, bug20]
+user_warzhou.bookmarkings = [bug1, bug3, bug5, bug7, bug9, bug10]
+user_yangjian.bookmarkings = [bug1, bug6, bug7, bug22, bug23, bug24]
+user_yiqian.bookmarkings = [bug1, bug2, bug5, bug16, bug17, bug19]
+user_xuluo2.bookmarkings = [bug1, bug2, bug7, bug8, bug9, bug10]
+
+
+user_yuw3.save
+user_warzhou.save
+user_yangjian.save
+user_yiqian.save
+user_xuluo2.save
+
+rating1 = RatingRelationship.create({
   user: user_yuw3,
   bug: bug1,
   score: 4
 })
 
-rating2 = RatingRelationship.new({
+rating2 = RatingRelationship.create({
   user: user_warzhou,
   bug: bug1,
   score: 5
 })
 
-rating3 = RatingRelationship.new({
+rating3 = RatingRelationship.create({
   user: user_yangjian,
   bug: bug1,
   score: 3
 })
 
-rating4 = RatingRelationship.new({
+rating4 = RatingRelationship.create({
   user: user_yiqian,
   bug: bug1,
-  score: 1
+  score: 5
 })
 
-rating5 = RatingRelationship.new({
+rating5 = RatingRelationship.create({
   user: user_xuluo2,
   bug: bug1,
   score: 4
 })
 
-rating6 = RatingRelationship.new({
+
+
+rating6 = RatingRelationship.create({
   user: user_yuw3,
   bug: bug2,
   score: 3
 })
 
-rating7 = RatingRelationship.new({
+rating7 = RatingRelationship.create({
   user: user_yuw3,
   bug: bug4,
   score: 5
 })
 
-rating8 = RatingRelationship.new({
+rating8 = RatingRelationship.create({
   user: user_yuw3,
   bug: bug7,
   score: 5
 })
 
-rating9 = RatingRelationship.new({
+rating9 = RatingRelationship.create({
   user: user_yuw3,
   bug: bug8,
   score: 3
 })
 
-rating10 = RatingRelationship.new({
+rating10 = RatingRelationship.create({
   user: user_yuw3,
   bug: bug10,
   score: 3
 })
 
-user_yuw3.rating_relationships = [rating1, rating7, rating8, rating9, rating10]
-user_yuw3.save
+
 
 

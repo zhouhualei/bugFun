@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20150630003552) do
 
   create_table "comments", force: true do |t|
     t.text     "content"
+    t.integer  "bug_id"
     t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
