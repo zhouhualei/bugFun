@@ -12,7 +12,7 @@ bug list: /bugs.json
 
 bug: /bugs/1.json
 
-user_rating: GET POST /rating_relationships.json?user_id=xxx&bug_id=yyy
+user_rating: GET POST DELETE /rating_relationships.json?user_id=xxx&bug_id=yyy&score=1
 
 [
   {
@@ -22,7 +22,7 @@ user_rating: GET POST /rating_relationships.json?user_id=xxx&bug_id=yyy
   }
 ]
 
-user_following: GET POST /follow_relationships.json?user_id=xxx&bug_id=yyy
+user_following: GET POST DELETE /follow_relationships.json?user_id=xxx&bug_id=yyy
 
 [
   {
@@ -31,7 +31,7 @@ user_following: GET POST /follow_relationships.json?user_id=xxx&bug_id=yyy
   }
 ]
 
-user_bookmarking: GET POST /bookmark_relationships.json?user_id=xxx&bug_id=yyy
+user_bookmarking: GET POST DELETE /bookmark_relationships.json?user_id=xxx&bug_id=yyy
 
 [
   {
