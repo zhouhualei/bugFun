@@ -39,3 +39,11 @@ user_bookmarking: GET POST DELETE /bookmark_relationships.json?user_id=xxx&bug_i
     bug_id: yyy
   }
 ]
+
+comments: POST /comments.json
+
+{
+    "author_id" : 1,
+    "content" : "Some Comment!",
+    "bug_id" : 1
+}
