@@ -22,6 +22,7 @@ user_rating: /rating_relationships.json?user_id=xxx&bug_id=yyy
 ]
 
 user_following: /follow_relationships.json?user_id=xxx&bug_id=yyy
+
 [
   {
     user: xxx,
@@ -30,6 +31,7 @@ user_following: /follow_relationships.json?user_id=xxx&bug_id=yyy
 ]
 
 user_bookmarking: /bookmark_relationships.json?user_id=xxx&bug_id=yyy
+
 [
   {
     user: xxx,
