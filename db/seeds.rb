@@ -74,7 +74,6 @@ bugs = Bug.create([
     assignee: user_yuw3,
     status: "Closed",
     views: 15,
-    rating: 5,
     track: "Access & Identity",
     project: "cepm",
     release: "Q1FY16"
@@ -87,7 +86,6 @@ bugs = Bug.create([
     assignee: user_yuw3,
     status: "Closed",
     views: 17,
-    rating: 4,
     track: "Access & Identity",
     project: "cepm",
     release: "Q1FY16"
@@ -100,7 +98,6 @@ bugs = Bug.create([
     assignee: nil,
     status: "New",
     views: 3,
-    rating: 4,
     track: "Access & Identity",
     project: "cepm",
     release: "Q1FY16"
@@ -128,7 +125,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: user_yuw3,
     status: "New",
     views: 24,
-    rating: 4,
     project: "lcs",
     track: "Access & Identity",
     release: "Q1FY16"
@@ -156,7 +152,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: user_yuw3,
     status: "New",
     views: 13,
-    rating: 3,
     project: "lcs",
     track: "Service Contract Management",
     release: "Q1FY16"
@@ -184,7 +179,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: nil,
     status: "New",
     views: 3,
-    rating: 2,
     project: "lcs",
     track: "SSM-B2B-CSCC",
     release: "Q1FY16"
@@ -212,7 +206,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: nil,
     status: "New",
     views: 56,
-    rating: 5,
     project: "ccs",
     track: "SSM-PMC",
     release: "Q1FY16"
@@ -240,7 +233,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: user_xuluo2,
     status: "New",
     views: 5,
-    rating: 2,
     project: "lcs",
     track: "1 Tier-Quoting & Ordering",
     release: "Q1FY16"
@@ -268,7 +260,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: user_yuw3,
     status: "New",
     views: 7,
-    rating: 2,
     project: "ccs",
     track: "2 Tier-Quoting & Ordering",
     release: "Q1FY16"
@@ -296,7 +287,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: user_yiqian,
     status: "New",
     views: 8,
-    rating: 3,
     project: "ccs",
     track: "Service Contract Management",
     release: "Q1FY16"
@@ -324,7 +314,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: nil,
     status: "New",
     views: 3,
-    rating: 1,
     project: "ccs",
     track: "Quoting",
     release: "Q1FY16"
@@ -352,7 +341,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: user_yuw3,
     status: "New",
     views: 18,
-    rating: 4,
     project: "ccs",
     track: "Quoting",
     release: "Q1FY16"
@@ -380,7 +368,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: user_yuw3,
     status: "Fixed",
     views: 8,
-    rating: 4,
     project: "ccs",
     track: "Service Supply Chain",
     release: "Q1FY16"
@@ -408,7 +395,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: user_warzhou,
     status: "Fixed",
     views: 2,
-    rating: 3,
     project: "ccs",
     track: "Service Supply Chain",
     release: "Q1FY16"
@@ -436,7 +422,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: user_yuw3,
     status: "Fixed",
     views: 9,
-    rating: 5,
     project: "ccs",
     track: "Service Supply Chain",
     release: "Q1FY16"
@@ -464,7 +449,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: user_yuw3,
     status: "Fixed",
     views: 3,
-    rating: 5,
     project: "ccs",
     track: "Service Supply Chain",
     release: "Q1FY16"
@@ -492,7 +476,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: user_yuw3,
     status: "Fixed",
     views: 6,
-    rating: 4,
     project: "ccs",
     track: "Service Supply Chain",
     release: "Q1FY16"
@@ -520,7 +503,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: user_yuw3,
     status: "Fixed",
     views: 6,
-    rating: 5,
     project: "ccs",
     track: "Service Supply Chain",
     release: "Q1FY16"
@@ -548,7 +530,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: user_yuw3,
     status: "Fixed",
     views: 35,
-    rating: 3,
     project: "ccs",
     track: "Service Supply Chain",
     release: "Q1FY16"
@@ -576,7 +557,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: user_yuw3,
     status: "Fixed",
     views: 68,
-    rating: 5,
     project: "ccs",
     track: "Service Supply Chain",
     release: "Q1FY16"
@@ -604,7 +584,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: user_yuw3,
     status: "Fixed",
     views: 1,
-    rating: 3,
     project: "ccs",
     track: "Service Supply Chain",
     release: "Q1FY16"
@@ -632,7 +611,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: user_yuw3,
     status: "Fixed",
     views: 8,
-    rating: 4,
     project: "ccs",
     track: "Service Supply Chain",
     release: "Q1FY16"
@@ -660,7 +638,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: user_yuw3,
     status: "Assigned",
     views: 78,
-    rating: 5,
     project: "ccs",
     track: "Service Supply Chain",
     release: "Q1FY16"
@@ -688,7 +665,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: user_yuw3,
     status: "Assigned",
     views: 88,
-    rating: 5,
     project: "ccs",
     track: "Service Supply Chain",
     release: "Q1FY16"
@@ -716,7 +692,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: user_yuw3,
     status: "Assigned",
     views: 88,
-    rating: 5,
     project: "ccs",
     track: "Service Supply Chain",
     release: "Q1FY16"
@@ -744,7 +719,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: user_yuw3,
     status: "Assigned",
     views: 38,
-    rating: 3,
     project: "ccs",
     track: "Service Supply Chain",
     release: "Q1FY16"
@@ -772,7 +746,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: user_yuw3,
     status: "Assigned",
     views: 98,
-    rating: 5,
     project: "ccs",
     track: "Service Supply Chain",
     release: "Q1FY16"
@@ -800,7 +773,6 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
     assignee: user_yuw3,
     status: "Assigned",
     views: 78,
-    rating: 5,
     project: "ccs",
     track: "Service Supply Chain",
     release: "Q1FY16"
@@ -808,34 +780,52 @@ Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs un
 ])
 
 bug1 = bugs[0]
-
+bug2 = bugs[1]
+bug3 = bugs[2]
+bug4 = bugs[3]
+bug5 = bugs[4]
+bug6 = bugs[5]
+bug7 = bugs[6]
+bug8 = bugs[7]
+bug9 = bugs[8]
+bug10 = bugs[9]
+bug11 = bugs[10]
+bug12 = bugs[11]
+bug13 = bugs[12]
+bug14 = bugs[13]
+bug15 = bugs[14]
+bug16 = bugs[15]
+bug17 = bugs[16]
+bug18 = bugs[17]
+bug19 = bugs[18]
+bug20 = bugs[19]
 
 comments = Comment.create([
   {
     content: "I am not sure of this bug. Is this related to PLSQL?",
     author: user_yuw3,
-    bug: bug1
+    bug: bugs[0]
   },
   {
     content: "Confirmed with Yang Jian, he is an DB expert.",
     author: user_warzhou,
-    bug: bug1
+    bug: bugs[0]
   },
   {
     content: "I think there is some inconsistence in your data.",
     author: user_yangjian,
-    bug: bug1
+    bug: bugs[0]
   },
   {
     content: "I see, Thanks, Jian, I know how to fix it now.",
     author: user_yuw3,
-    bug: bug1
+    bug: bugs[0]
   }
 ])
 
 
-user_yuw3.followings = [bug1]
-user_yuw3.bookmarkings = [bug1]
+user_yuw3.followings = [bug1, bug2, bug4, bug6, bug9]
+user_yuw3.bookmarkings = [bug1, bug3, bug5, bug6, bug8, bug10]
 
 rating1 = RatingRelationship.new ({
   user: user_yuw3,
@@ -843,7 +833,61 @@ rating1 = RatingRelationship.new ({
   score: 4
 })
 
-user_yuw3.rating_relationships = [rating1]
+rating2 = RatingRelationship.new({
+  user: user_warzhou,
+  bug: bug1,
+  score: 5
+})
+
+rating3 = RatingRelationship.new({
+  user: user_yangjian
+  bug: bug1,
+  score: 3
+})
+
+rating4 = RatingRelationship.new({
+  user: user_yiqian
+  bug: bug1,
+  score: 1
+})
+
+rating5 = RatingRelationship.new({
+  user: user_xuluo2
+  bug: bug1,
+  score: 4
+})
+
+rating6 = RatingRelationship.new({
+  user: user_yuw3,
+  bug: bug2,
+  score: 3
+})
+
+rating7 = RatingRelationship.new({
+  user: user_yuw3,
+  bug: bug4,
+  score: 5
+})
+
+rating8 = RatingRelationship.new({
+  user: user_yuw3,
+  bug: bug7,
+  score: 5
+})
+
+rating9 = RatingRelationship.new({
+  user: user_yuw3,
+  bug: bug8,
+  score: 3
+})
+
+rating10 = RatingRelationship.new({
+  user: user_yuw3,
+  bug: bug10,
+  score: 3
+})
+
+user_yuw3.rating_relationships = [rating1, rating7, rating8, rating9, rating10]
 user_yuw3.save
 
 
