@@ -13,6 +13,7 @@ bug list: /bugs.json
 bug: /bugs/1.json
 
 user_rating: /rating_relationships.json?user_id=xxx&bug_id=yyy
+
 [
   {
     user: xxx,
