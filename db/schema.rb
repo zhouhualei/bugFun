@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20150630003552) do
     t.integer  "assignee_id"
     t.string   "status"
     t.integer  "views"
-    t.float    "rating"
     t.string   "track"
     t.string   "project"
     t.string   "release"

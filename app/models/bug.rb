@@ -15,6 +15,11 @@ class Bug < ActiveRecord::Base
 
   belongs_to :assignee, foreign_key: "assignee_id", class_name: "User"
 
+  def score
+    # TODO
+    rand(5)
+  end
+
   scope :fixed, -> { where(status: "Fixed") }
   scope :new_status, -> { where(status: "New") }
   scope :assigned, -> { where(status: "Assigned") }

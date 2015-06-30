@@ -4,7 +4,7 @@ class BugsController < ApplicationController
   # GET /bugs
   # GET /bugs.json
   def index
-    @bugs = Bug.all.order(rating: :desc)
+    @bugs = Bug.all.order(created_at: :desc)
   end
 
   # GET /bugs/1

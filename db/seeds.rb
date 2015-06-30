@@ -840,19 +840,19 @@ rating2 = RatingRelationship.new({
 })
 
 rating3 = RatingRelationship.new({
-  user: user_yangjian
+  user: user_yangjian,
   bug: bug1,
   score: 3
 })
 
 rating4 = RatingRelationship.new({
-  user: user_yiqian
+  user: user_yiqian,
   bug: bug1,
   score: 1
 })
 
 rating5 = RatingRelationship.new({
-  user: user_xuluo2
+  user: user_xuluo2,
   bug: bug1,
   score: 4
 })
