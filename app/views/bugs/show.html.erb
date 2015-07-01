@@ -1,4 +1,4 @@
-    <link href="/css/detail.css" rel="stylesheet">
+<link href="/css/detail.css" rel="stylesheet">
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6 col-md-offset-2">
@@ -8,35 +8,39 @@
 
     <!-- Bug Info -->
     <div class="row">
-        <div class="col-md-3 col-md-offset-2">
-            <img height="160" src="http://cdni.wired.co.uk/620x413/a_c/bsod.jpg" />
+        <div class="col-md-offset-2">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img width="200" src="http://cdni.wired.co.uk/620x413/a_c/bsod.jpg" />
+                        </td>
+                        <td>
+                            <span data-bind="text: score" style="color: orange; font-size: 100px;"></span>
+                        </td>
+                        <td>
+                            <table>
+                                <tbody data-bind="foreach: normalizedRatings">
+                                    <tr style="height: 25px;">
+                                        <td><span data-bind="text: count"></span><span class="glyphicon glyphicon-star"></span></td>
+                                        <td width="100">
+                                            <span style="border: 1px solid orange; background: orange; display: block; height: 20px;" data-bind="style: { width: percentage }"></span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+    </div>
 
-        <div class="col-md-6">
-            <div class="container-fluid">
-                <div class="row">
-                    <h4 data-bind="foreach: tags">
-                        <span class="label label-primary" data-bind="text: $data"></span>
-                    </h4>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <span data-bind="text: score" style="color: orange; font-size: 100px;"></span>
-                    </div>
-                    <div class="col-md-4">
-                        <table>
-                            <tbody data-bind="foreach: normalizedRatings">
-                                <tr style="height: 25px;">
-                                    <td><span data-bind="text: count"></span><span class="glyphicon glyphicon-star"></span></td>
-                                    <td width="100">
-                                        <span style="border: 1px solid orange; background: orange; display: block; height: 20px;" data-bind="style: { width: percentage }"></span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+    <div class="row">
+        <div class="col-md-offset-2">
+            <h4 data-bind="foreach: tags">
+                <span class="label label-primary" data-bind="text: $data"></span>
+            </h4>
         </div>
     </div>
 
