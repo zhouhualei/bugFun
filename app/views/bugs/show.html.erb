@@ -1,532 +1,525 @@
     <link href="/css/detail.css" rel="stylesheet">
+<div class="container-fluid">
+    <!-- Bug Info -->
+    <div class="row">
+        <div class="col-md-3 col-md-offset-2">
+            <img height="300" />
+        </div>
 
-
-    <div class="container-fluid">
-        <!-- Bug Info -->
-        <div class="row">
-            <div class="col-md-3 col-md-offset-2">
-                <img height="300" />
-            </div>
-
-            <div class="col-md-6">
-                <div class="container-fluid">
-                    <div class="row">                        
-                        <h1 data-bind="text: bugId"></h1>
-                        <h4 data-bind="foreach: tags">
-                            <span class="label label-primary" data-bind="text: $data"></span>
-                        </h4>
+        <div class="col-md-6">
+            <div class="container-fluid">
+                <div class="row">                        
+                    <h1 data-bind="text: bugId"></h1>
+                    <h4 data-bind="foreach: tags">
+                        <span class="label label-primary" data-bind="text: $data"></span>
+                    </h4>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <span data-bind="text: score" style="color: orange; font-size: 100px;"></span>
                     </div>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <span data-bind="text: score" style="color: orange; font-size: 100px;"></span>
-                        </div>
-                        <div class="col-md-4">
-                            <table>
-                                <tbody data-bind="foreach: normalizedRatings">
-                                    <tr style="height: 25px;">
-                                        <td><span data-bind="text: count"></span><span class="glyphicon glyphicon-star"></span></td>
-                                        <td width="100">
-                                            <span style="border: 1px solid orange; background: orange; display: block; height: 20px;" data-bind="style: { width: percentage }"></span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="col-md-4">
+                        <table>
+                            <tbody data-bind="foreach: normalizedRatings">
+                                <tr style="height: 25px;">
+                                    <td><span data-bind="text: count"></span><span class="glyphicon glyphicon-star"></span></td>
+                                    <td width="100">
+                                        <span style="border: 1px solid orange; background: orange; display: block; height: 20px;" data-bind="style: { width: percentage }"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="col-md-offset-2">
-                <div class="btn-group" role="group" aria-label="...">
-                    <!-- ko if: myFollow -->
-                    <button type="button" class="btn btn-primary active">
-                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true" data-bind="click: toggleFollow"></span> Followed
-                    </button>
-                    <!-- /ko -->
-                    <!-- ko ifnot: myFollow -->
-                    <button type="button" class="btn btn-default">
-                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true" data-bind="click: toggleFollow"></span> Follow
-                    </button>
-                    <!-- /ko -->
-                    <button type="button" class="btn btn-default" data-bind="text: followers_count"></button>
-                </div>
-                
-                <div class="btn-group" role="group" aria-label="...">
-                    <!-- ko if: myBookmark -->
-                    <button type="button" class="btn btn-primary active">
-                        <span class="glyphicon glyphicon-star" aria-hidden="true" data-bind="click: toggleBookmark"></span> In Favorite
-                    </button>
-                    <!-- /ko -->
-                    <!-- ko ifnot: myBookmark -->
-                    <button type="button" class="btn btn-default">
-                        <span class="glyphicon glyphicon-star" aria-hidden="true" data-bind="click: toggleBookmark"></span> Add to Favorite
-                    </button>
-                    <!-- /ko -->
-                    <button type="button" class="btn btn-default" data-bind="text: bookmarkusers_count"></button>
-                </div>
+    <div class="row">
+        <div class="col-md-offset-2">
+            <div class="btn-group" role="group" aria-label="...">
+                <!-- ko if: myFollow -->
+                <button type="button" class="btn btn-primary active" data-bind="click: toggleFollow">
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Follow
+                </button>
+                <!-- /ko -->
+                <!-- ko ifnot: myFollow -->
+                <button type="button" class="btn btn-default" data-bind="click: toggleFollow">
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Follow
+                </button>
+                <!-- /ko -->
+                <button type="button" class="btn btn-default" data-bind="text: followers_count"></button>
+            </div>
+            
+            <div class="btn-group" role="group" aria-label="...">
+                <!-- ko if: myBookmark -->
+                <button type="button" class="btn btn-primary active" data-bind="click: toggleBookmark">
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Bookmark
+                </button>
+                <!-- /ko -->
+                <!-- ko ifnot: myBookmark -->
+                <button type="button" class="btn btn-default" data-bind="click: toggleBookmark">
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Bookmark
+                </button>
+                <!-- /ko -->
+                <button type="button" class="btn btn-default" data-bind="text: bookmarkusers_count"></button>
+            </div>
 
-                <div class="btn-group" role="group" aria-label="...">
-                    <!-- ko if: canRate -->
-                    <button type="button" class="btn btn-default">
-                        I want to rate this:
-                    </button>
-                    <button type="button" class="btn btn-default">
-                        <!-- ko foreach: stars -->
-                        <span data-bind="click: $parent.rateIt" class="glyphicon glyphicon-star-empty"></span>
-                        <!-- /ko -->
-                    </button>
-                    <!-- /ko -->
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default">
+                    My rating:
+                </button>
 
-                    <!-- ko ifnot: canRate -->
-                    <button type="button" class="btn btn-default">
-                        My rating:
-                    </button>
-                    <button type="button" class="btn btn-default">
-                        <!-- ko foreach: stars -->
-                        <span data-bind="visible: fill" class="glyphicon glyphicon-star"></span>
-                        <span data-bind="visible: !fill()" class="glyphicon glyphicon-star-empty"></span>
-                        <!-- /ko -->
-                    </button>
-                    <!-- /ko -->                    
-                </div>
-                
-                
-                <div class="btn-group" role="group" aria-label="...">
-                    <span class="btn btn-primary">
-                        Fixing by Yu Wang
-                    </span>
-                </div>
+                <!-- ko if: canRate -->
+                <button type="button" class="btn btn-default" data-bind="foreach: stars">
+                    <span data-bind="click: $parent.rateIt" class="glyphicon glyphicon-star-empty"></span>
+                </button>
+                <!-- /ko -->
+
+                <!-- ko ifnot: canRate -->
+                <button type="button" class="btn btn-default">
+                    <!-- ko foreach: stars -->
+                    <span data-bind="visible: fill" class="glyphicon glyphicon-star"></span>
+                    <span data-bind="visible: !fill" class="glyphicon glyphicon-star-empty"></span>
+                    <!-- /ko -->
+                </button>
+                <!-- /ko -->                    
+            </div>
+            
+            
+            <div class="btn-group" role="group" aria-label="...">
+                <span class="btn btn-primary">
+                    Fixing by Yu Wang
+                </span>
             </div>
         </div>
+    </div>
 
-        <!-- Bug Comments -->
-        <div>
-            <!DOCTYPE html>
-            <html class="" lang="en">
-            <head>
-                <title></title>
-                <style>
-                    * {
-                        box-sizing: border-box;
-                    }
+    <!-- Bug Comments -->
+    <div>
+        <!DOCTYPE html>
+        <html class="" lang="en">
+        <head>
+            <title></title>
+            <style>
+                * {
+                    box-sizing: border-box;
+                }
 
-                    .discussion-timeline {
-                        position: relative;
-                        width: 760px;
-                        float: left;
-                    }
+                .discussion-timeline {
+                    position: relative;
+                    width: 760px;
+                    float: left;
+                }
 
-                        .discussion-timeline::before {
-                            display: block;
-                            content: "";
-                            position: absolute;
-                            top: 0px;
-                            bottom: 0px;
-                            left: 79px;
-                            width: 2px;
-                            background-color: #f3f3f3;
-                            z-index: -1;
-                        }
-
-                    .clearfix::before {
-                        display: table;
-                        content: "";
-                    }
-
-                    .clearfix::after {
-                        display: table;
-                        clear: both;
-                        content: "";
-                    }
-
-                    .issues-listing {
-                        position: relative;
-                    }
-
-                    .repository-with-sidebar .repository-content {
-                        float: left;
-                        width: 920px;
-                    }
-
-                    .repo-container {
-                        min-height: 345px;
-                    }
-
-                    .repository-with-sidebar::before {
-                        display: table;
-                        content: "";
-                    }
-
-                    .repository-with-sidebar::after {
-                        display: table;
-                        clear: both;
-                        content: "";
-                    }
-
-                    .container {
-                        width: 980px;
-                        margin-right: auto;
-                        margin-left: auto;
-                    }
-
-                        .container::before {
-                            display: table;
-                            content: "";
-                        }
-
-                        .container::after {
-                            display: table;
-                            clear: both;
-                            content: "";
-                        }
-
-                    body {
-                        margin: 0;
-                    }
-
-                    body {
-                        font: 13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-                        color: #333;
-                        background-color: #fff;
-                    }
-
-                    body {
-                        word-wrap: break-word;
-                    }
-
-                    html {
-                        font-family: sans-serif;
-                        -webkit-text-size-adjust: 100%;
-                        -ms-text-size-adjust: 100%;
-                        text-size-adjust: 100%;
-                    }
-
-                    .timeline-comment-wrapper {
-                        position: relative;
-                        padding-left: 64px;
-                        margin-top: 15px;
-                        margin-bottom: 15px;
-                        border-top: 2px solid #fff;
-                        border-bottom: 2px solid #fff;
-                    }
-
-                    :first-child.timeline-comment-wrapper {
-                        margin-top: 0px;
-                    }
-
-                    a {
-                        background-color: transparent;
-                    }
-
-                    a {
-                        color: #4078c0;
-                        text-decoration: none;
-                    }
-
-                    .timeline-comment {
-                        position: relative;
-                        background-color: #fff;
-                        border: 1px solid #ddd;
-                        border-radius: 3px;
-                    }
-
-                    .timeline-comment-wrapper > .timeline-comment::after, .timeline-comment-wrapper > .timeline-comment::before, .timeline-new-comment .timeline-comment::after, .timeline-new-comment .timeline-comment::before {
-                        position: absolute;
-                        top: 11px;
-                        left: -16px;
-                        right: 100%;
-                        width: 0px;
-                        height: 0px;
+                    .discussion-timeline::before {
                         display: block;
-                        content: " ";
-                        border-color: transparent;
-                        border-style: solid solid outset;
-                        pointer-events: none;
+                        content: "";
+                        position: absolute;
+                        top: 0px;
+                        bottom: 0px;
+                        left: 79px;
+                        width: 2px;
+                        background-color: #f3f3f3;
+                        z-index: -1;
                     }
 
-                    .timeline-comment-wrapper > .timeline-comment::after, .timeline-new-comment .timeline-comment::after {
-                        border-width: 7px;
-                        border-right-color: #f7f7f7;
-                        margin-top: 1px;
-                        margin-left: 2px;
+                .clearfix::before {
+                    display: table;
+                    content: "";
+                }
+
+                .clearfix::after {
+                    display: table;
+                    clear: both;
+                    content: "";
+                }
+
+                .issues-listing {
+                    position: relative;
+                }
+
+                .repository-with-sidebar .repository-content {
+                    float: left;
+                    width: 920px;
+                }
+
+                .repo-container {
+                    min-height: 345px;
+                }
+
+                .repository-with-sidebar::before {
+                    display: table;
+                    content: "";
+                }
+
+                .repository-with-sidebar::after {
+                    display: table;
+                    clear: both;
+                    content: "";
+                }
+
+                .container {
+                    width: 980px;
+                    margin-right: auto;
+                    margin-left: auto;
+                }
+
+                    .container::before {
+                        display: table;
+                        content: "";
                     }
 
-                    .timeline-comment-wrapper > .timeline-comment::before, .timeline-new-comment .timeline-comment::before {
-                        border-right-color: #ddd;
-                        border-width: 8px;
+                    .container::after {
+                        display: table;
+                        clear: both;
+                        content: "";
                     }
 
-                    .timeline-comment-header {
-                        padding-left: 15px;
-                        padding-right: 15px;
-                        color: #767676;
-                        background-color: #f7f7f7;
-                        border-bottom: 1px solid #eee;
-                        border-top-left-radius: 3px;
-                        border-top-right-radius: 3px;
+                body {
+                    margin: 0;
+                }
+
+                body {
+                    font: 13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+                    color: #333;
+                    background-color: #fff;
+                }
+
+                body {
+                    word-wrap: break-word;
+                }
+
+                html {
+                    font-family: sans-serif;
+                    -webkit-text-size-adjust: 100%;
+                    -ms-text-size-adjust: 100%;
+                    text-size-adjust: 100%;
+                }
+
+                .timeline-comment-wrapper {
+                    position: relative;
+                    padding-left: 64px;
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+                    border-top: 2px solid #fff;
+                    border-bottom: 2px solid #fff;
+                }
+
+                :first-child.timeline-comment-wrapper {
+                    margin-top: 0px;
+                }
+
+                a {
+                    background-color: transparent;
+                }
+
+                a {
+                    color: #4078c0;
+                    text-decoration: none;
+                }
+
+                .timeline-comment {
+                    position: relative;
+                    background-color: #fff;
+                    border: 1px solid #ddd;
+                    border-radius: 3px;
+                }
+
+                .timeline-comment-wrapper > .timeline-comment::after, .timeline-comment-wrapper > .timeline-comment::before, .timeline-new-comment .timeline-comment::after, .timeline-new-comment .timeline-comment::before {
+                    position: absolute;
+                    top: 11px;
+                    left: -16px;
+                    right: 100%;
+                    width: 0px;
+                    height: 0px;
+                    display: block;
+                    content: " ";
+                    border-color: transparent;
+                    border-style: solid solid outset;
+                    pointer-events: none;
+                }
+
+                .timeline-comment-wrapper > .timeline-comment::after, .timeline-new-comment .timeline-comment::after {
+                    border-width: 7px;
+                    border-right-color: #f7f7f7;
+                    margin-top: 1px;
+                    margin-left: 2px;
+                }
+
+                .timeline-comment-wrapper > .timeline-comment::before, .timeline-new-comment .timeline-comment::before {
+                    border-right-color: #ddd;
+                    border-width: 8px;
+                }
+
+                .timeline-comment-header {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    color: #767676;
+                    background-color: #f7f7f7;
+                    border-bottom: 1px solid #eee;
+                    border-top-left-radius: 3px;
+                    border-top-right-radius: 3px;
+                }
+
+                .markdown-body {
+                    overflow: hidden;
+                    font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+                    font-size: 16px;
+                    line-height: 1.6;
+                    word-wrap: break-word;
+                }
+
+                .comment-body {
+                    width: 100%;
+                    padding: 15px;
+                    overflow: visible;
+                    font-size: 14px;
+                }
+
+                pre {
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+                }
+
+                .markdown-body p, .markdown-body blockquote, .markdown-body ul, .markdown-body ol, .markdown-body dl, .markdown-body table, .markdown-body pre {
+                    margin-top: 0px;
+                    margin-bottom: 16px;
+                }
+
+                .markdown-body > *:first-child {
+                    margin-top: 0px !important;
+                }
+
+                pre {
+                    overflow: auto;
+                }
+
+                code, kbd, pre, samp {
+                    font-family: monospace, monospace;
+                    font-size: 1em;
+                }
+
+                .markdown-body .highlight pre, .markdown-body pre {
+                    padding: 16px;
+                    overflow: auto;
+                    font-size: 85%;
+                    line-height: 1.45;
+                    background-color: #f7f7f7;
+                    border-radius: 3px;
+                }
+
+                .markdown-body pre {
+                    word-wrap: normal;
+                }
+
+                .markdown-body > *:last-child {
+                    margin-bottom: 0px !important;
+                }
+
+                tt, code {
+                    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+                    font-size: 12px;
+                }
+
+                .markdown-body code, .markdown-body tt {
+                    padding: 0;
+                    padding-top: 0.2em;
+                    padding-bottom: 0.2em;
+                    margin: 0;
+                    font-size: 85%;
+                    background-color: rgba(0,0,0,0.04);
+                    border-radius: 3px;
+                }
+
+                    .markdown-body code::before, .markdown-body code::after, .markdown-body tt::before, .markdown-body tt::after {
+                        letter-spacing: -0.2em;
+                        content: "\00a0";
                     }
 
-                    .markdown-body {
-                        overflow: hidden;
-                        font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
-                        font-size: 16px;
-                        line-height: 1.6;
-                        word-wrap: break-word;
+                .markdown-body pre > code {
+                    padding: 0;
+                    margin: 0;
+                    font-size: 100%;
+                    word-break: normal;
+                    white-space: pre;
+                    background: transparent;
+                    border: 0;
+                }
+
+                .markdown-body pre code, .markdown-body pre tt {
+                    display: inline;
+                    max-width: initial;
+                    padding: 0;
+                    margin: 0;
+                    overflow: initial;
+                    line-height: inherit;
+                    word-wrap: normal;
+                    background-color: transparent;
+                    border: 0;
+                }
+
+                    .markdown-body pre code::before, .markdown-body pre code::after, .markdown-body pre tt::before, .markdown-body pre tt::after {
+                        content: normal;
                     }
 
-                    .comment-body {
-                        width: 100%;
-                        padding: 15px;
-                        overflow: visible;
-                        font-size: 14px;
-                    }
+                .timeline-comment-header-text {
+                    max-width: 78%;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
 
-                    pre {
-                        margin-top: 0px;
-                        margin-bottom: 0px;
-                        font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
-                    }
+                b, strong {
+                    font-weight: bold;
+                }
 
-                    .markdown-body p, .markdown-body blockquote, .markdown-body ul, .markdown-body ol, .markdown-body dl, .markdown-body table, .markdown-body pre {
-                        margin-top: 0px;
-                        margin-bottom: 16px;
-                    }
+                .timeline-comment-header .timestamp {
+                    white-space: nowrap;
+                    color: inherit;
+                }
 
-                    .markdown-body > *:first-child {
-                        margin-top: 0px !important;
-                    }
+                .timeline-comment-header .author {
+                    font-weight: bold;
+                    color: #555;
+                }
 
-                    pre {
-                        overflow: auto;
-                    }
+                img {
+                    border: 0;
+                }
 
-                    code, kbd, pre, samp {
-                        font-family: monospace, monospace;
-                        font-size: 1em;
-                    }
+                .timeline-comment-avatar {
+                    float: left;
+                    margin-left: -64px;
+                    border-radius: 3px;
+                }
 
-                    .markdown-body .highlight pre, .markdown-body pre {
-                        padding: 16px;
-                        overflow: auto;
-                        font-size: 85%;
-                        line-height: 1.45;
-                        background-color: #f7f7f7;
-                        border-radius: 3px;
-                    }
+                .previewable-comment-form textarea {
+                  display: block;
+                  width: 100%;
+                  min-height: 100px;
+                  max-height: 500px;
+                  padding: 10px;
+                  resize: vertical;
+                }
 
-                    .markdown-body pre {
-                        word-wrap: normal;
-                    }
+                .upload-enabled textarea {
+                  display: block;
+                  border-bottom: 1px dashed #ddd;
+                  border-bottom-right-radius: 0;
+                  border-bottom-left-radius: 0;
+                }
 
-                    .markdown-body > *:last-child {
-                        margin-bottom: 0px !important;
-                    }
-
-                    tt, code {
-                        font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-                        font-size: 12px;
-                    }
-
-                    .markdown-body code, .markdown-body tt {
-                        padding: 0;
-                        padding-top: 0.2em;
-                        padding-bottom: 0.2em;
-                        margin: 0;
-                        font-size: 85%;
-                        background-color: rgba(0,0,0,0.04);
-                        border-radius: 3px;
-                    }
-
-                        .markdown-body code::before, .markdown-body code::after, .markdown-body tt::before, .markdown-body tt::after {
-                            letter-spacing: -0.2em;
-                            content: "\00a0";
-                        }
-
-                    .markdown-body pre > code {
-                        padding: 0;
-                        margin: 0;
-                        font-size: 100%;
-                        word-break: normal;
-                        white-space: pre;
-                        background: transparent;
-                        border: 0;
-                    }
-
-                    .markdown-body pre code, .markdown-body pre tt {
-                        display: inline;
-                        max-width: initial;
-                        padding: 0;
-                        margin: 0;
-                        overflow: initial;
-                        line-height: inherit;
-                        word-wrap: normal;
-                        background-color: transparent;
-                        border: 0;
-                    }
-
-                        .markdown-body pre code::before, .markdown-body pre code::after, .markdown-body pre tt::before, .markdown-body pre tt::after {
-                            content: normal;
-                        }
-
-                    .timeline-comment-header-text {
-                        max-width: 78%;
-                        padding-top: 10px;
-                        padding-bottom: 10px;
-                    }
-
-                    b, strong {
-                        font-weight: bold;
-                    }
-
-                    .timeline-comment-header .timestamp {
-                        white-space: nowrap;
-                        color: inherit;
-                    }
-
-                    .timeline-comment-header .author {
-                        font-weight: bold;
-                        color: #555;
-                    }
-
-                    img {
-                        border: 0;
-                    }
-
-                    .timeline-comment-avatar {
-                        float: left;
-                        margin-left: -64px;
-                        border-radius: 3px;
-                    }
-
-                    .previewable-comment-form textarea {
-                      display: block;
-                      width: 100%;
-                      min-height: 100px;
-                      max-height: 500px;
-                      padding: 10px;
-                      resize: vertical;
-                    }
-
-                    .upload-enabled textarea {
-                      display: block;
-                      border-bottom: 1px dashed #ddd;
-                      border-bottom-right-radius: 0;
-                      border-bottom-left-radius: 0;
-                    }
-
-                    .comment-form-textarea {
-                      width: 100%;
-                      max-width: 100%;
-                      height: 100px;
-                      min-height: 100px;
-                      margin: 0;
-                      font-size: 14px;
-                      line-height: 1.6;
-                      -webkit-transform: translateZ(0);
-                      transform: translateZ(0);
-                    }
+                .comment-form-textarea {
+                  width: 100%;
+                  max-width: 100%;
+                  height: 100px;
+                  min-height: 100px;
+                  margin: 0;
+                  font-size: 14px;
+                  line-height: 1.6;
+                  -webkit-transform: translateZ(0);
+                  transform: translateZ(0);
+                }
 
 /*                    .inline-comment-form .form-actions, .timeline-new-comment .form-actions {
-                      padding: 0 10px 10px;
-                    }
+                  padding: 0 10px 10px;
+                }
 */
-                    .previewable-comment-form.write-selected .write-content, .previewable-comment-form.preview-selected .preview-content {
-                      display: block;
-                    }
+                .previewable-comment-form.write-selected .write-content, .previewable-comment-form.preview-selected .preview-content {
+                  display: block;
+                }
 
-                    .previewable-comment-form .write-content, .previewable-comment-form .preview-content {
-                      display: none;
-                      padding: 0 10px 10px;
-                    }
-                    
-                    .write-content {
-                      position: relative;
-                    }
-                </style>
-            </head>
-            <body class="logged_out  env-production windows vis-public">
-                <div class="wrapper">
-                    <div class="site" itemtype="http://schema.org/WebPage" itemscope="">
-                        <div class="container">
-                            <div class="repository-with-sidebar repo-container new-discussion-timeline">
-                                <div class="repository-content context-loader-container" id="js-repo-pjax-container" data-pjax-container="">
-                                    <h1>Description</h1>
-                                    <p data-bind="text: description"></p>
+                .previewable-comment-form .write-content, .previewable-comment-form .preview-content {
+                  display: none;
+                  padding: 0 10px 10px;
+                }
+                
+                .write-content {
+                  position: relative;
+                }
+            </style>
+        </head>
+        <body class="logged_out  env-production windows vis-public">
+            <div class="wrapper">
+                <div class="site" itemtype="http://schema.org/WebPage" itemscope="">
+                    <div class="container">
+                        <div class="repository-with-sidebar repo-container new-discussion-timeline">
+                            <div class="repository-content context-loader-container" id="js-repo-pjax-container" data-pjax-container="">
+                                <h1>Description</h1>
+                                <p data-bind="text: description"></p>
 
-                                    <h1>Comments</h1>
-                                    <div class="issues-listing" data-pjax="">
-                                        <div class="js-issues-results" id="show_issue">
-                                            <div class="tab-content clearfix" id="discussion_bucket">
-                                                <div class="discussion-timeline js-quote-selection-container">
-                                                    <div class="js-discussion js-socket-channel" data-channel="brianreavis/selectize.js:marked-as-read:88439592">
-                                                        <!-- ko foreach: comments -->
-                                                        <div class="timeline-comment-wrapper js-comment-container">
-                                                            <a data-bind="attr: {href: author_img_url}"><img width="48" height="48" class="timeline-comment-avatar" alt="@c143" data-bind="attr: { src: img, href: author_img_url }"></a>
-                                                            <div class="comment previewable-edit timeline-comment js-comment js-task-list-container " id="issue-88439592" data-body-version="0b153357d8810a39c44e7e5a80dcf812">
-                                                                <div class="timeline-comment-header ">
+                                <h1>Comments</h1>
+                                <div class="issues-listing" data-pjax="">
+                                    <div class="js-issues-results" id="show_issue">
+                                        <div class="tab-content clearfix" id="discussion_bucket">
+                                            <div class="discussion-timeline js-quote-selection-container">
+                                                <div class="js-discussion js-socket-channel" data-channel="brianreavis/selectize.js:marked-as-read:88439592">
+                                                    <!-- ko foreach: comments -->
+                                                    <div class="timeline-comment-wrapper js-comment-container">
+                                                        <a data-bind="attr: {href: author_img_url}"><img width="48" height="48" class="timeline-comment-avatar" alt="@c143" data-bind="attr: { src: author_img_url, href: author_img_url }"></a>
+                                                        <div class="comment previewable-edit timeline-comment js-comment js-task-list-container " id="issue-88439592" data-body-version="0b153357d8810a39c44e7e5a80dcf812">
+                                                            <div class="timeline-comment-header ">
 
-                                                                    <div class="timeline-comment-header-text">
-                                                                        <strong>
-                                                                            <a class="author" data-bind="href: author_img_url, text: author_name"></a>
-                                                                        </strong>
-                                                                        commented
+                                                                <div class="timeline-comment-header-text">
+                                                                    <strong>
+                                                                        <a class="author" data-bind="href: author_img_url, text: author_name"></a>
+                                                                    </strong>
+                                                                    commented
 
-                                                                        <a class="timestamp" href="#issue-88439592">
-                                                                            <time title="‎Jun‎ ‎15‎, ‎2015‎ ‎10‎:‎16‎ ‎PM" is="relative-time" datetime="2015-06-15T14:16:42Z">
-                                                                                <span data-bind="text: created_at"></span>
-                                                                            </time>
-                                                                        </a>
-                                                                    </div>
+                                                                    <a class="timestamp" href="#issue-88439592">
+                                                                        <time title="‎Jun‎ ‎15‎, ‎2015‎ ‎10‎:‎16‎ ‎PM" is="relative-time" datetime="2015-06-15T14:16:42Z">
+                                                                            <span data-bind="text: created_at"></span>
+                                                                        </time>
+                                                                    </a>
                                                                 </div>
+                                                            </div>
 
-                                                                <div class="comment-content">
-                                                                    <div class="edit-comment-hide">
-                                                                        <div class="comment-body markdown-body markdown-format js-comment-body">
-                                                                            <p data-bind="text: content"></p>
-                                                                        </div>
+                                                            <div class="comment-content">
+                                                                <div class="edit-comment-hide">
+                                                                    <div class="comment-body markdown-body markdown-format js-comment-body">
+                                                                        <p data-bind="text: content"></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <!-- /ko -->
                                                     </div>
+                                                    <!-- /ko -->
+                                                </div>
 
-                                                    <div class="discussion-timeline-actions">
-                                                        <div class="timeline-comment-wrapper timeline-new-comment js-comment-container ">
-                                                            <a href="/users/1"><img alt="@zhouhualei" class="timeline-comment-avatar" height="48" src="http://wwwin.cisco.com/dir/photo/zoom/yuw3.jpg" width="48"></a>
+                                                <div class="discussion-timeline-actions">
+                                                    <div class="timeline-comment-wrapper timeline-new-comment js-comment-container ">
+                                                        <a href="/users/1"><img alt="@zhouhualei" class="timeline-comment-avatar" height="48" src="http://wwwin.cisco.com/dir/photo/zoom/yuw3.jpg" width="48"></a>
 
-                                                            <form accept-charset="UTF-8" action="#" class="js-new-comment-form" data-remote="true" data-type="json" method="post">
-                                                                <div style="margin:0;padding:0;display:inline"></div>
-                                                                <div class="timeline-comment">
-                                                                    <div class="js-previewable-comment-form js-suggester-container previewable-comment-form write-selected" data-preview-url="/preview?repository=15480067">
+                                                        <form accept-charset="UTF-8" action="#" class="js-new-comment-form" data-remote="true" data-type="json" method="post">
+                                                            <div style="margin:0;padding:0;display:inline"></div>
+                                                            <div class="timeline-comment">
+                                                                <div class="js-previewable-comment-form js-suggester-container previewable-comment-form write-selected" data-preview-url="/preview?repository=15480067">
 
-                                                                        <div class="timeline-comment-header ">
-                                                                            <div class="timeline-comment-header-text">
-                                                                                <span>Leave your comment here</span>
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <div class="comment-form-error js-comment-form-error" style="display:none">    There was an error creating your Issue.
-                                                                        </div>
-
-                                                                        <div class="write-content js-write-bucket js-uploadable-container js-upload-markdown-image upload-enabled is-default" data-upload-policy-url="/upload/policies/assets" data-upload-repository-id="15480067">
-                                                                            <textarea name="comment[body]" tabindex="1" id="new_comment_field" placeholder="..." aria-label="Comment body" class="input-contrast comment-form-textarea js-comment-field js-task-list-field js-quick-submit js-size-to-fit js-quote-selection-target js-session-resumable js-suggester-field"></textarea>
-
+                                                                    <div class="timeline-comment-header ">
+                                                                        <div class="timeline-comment-header-text">
+                                                                            <span>Leave your comment here</span>
                                                                         </div>
                                                                     </div>
 
-                                                                    <div class="comment-form-error comment-form-bottom js-comment-update-error"></div>
-                                                                </div>
+                                                                    <div class="comment-form-error js-comment-form-error" style="display:none">    There was an error creating your Issue.
+                                                                    </div>
 
-                                                                <div class="form-actions">
-                                                                    <div id="partial-new-comment-form-actions" class="js-socket-channel js-updatable-content" data-channel="react-bootstrap/react-bootstrap:issue:90384595:state" data-url="/react-bootstrap/react-bootstrap/issues/884/show_partial?partial=issues%2Fform_actions">
-                                                                        <button type="submit" class="btn btn-primary" tabindex="2" data-disable-with="" data-disable-invalid="">Comment</button>
+                                                                    <div class="write-content js-write-bucket js-uploadable-container js-upload-markdown-image upload-enabled is-default" data-upload-policy-url="/upload/policies/assets" data-upload-repository-id="15480067">
+                                                                        <textarea name="comment[body]" tabindex="1" id="new_comment_field" placeholder="..." aria-label="Comment body" class="input-contrast comment-form-textarea js-comment-field js-task-list-field js-quick-submit js-size-to-fit js-quote-selection-target js-session-resumable js-suggester-field"></textarea>
+
                                                                     </div>
                                                                 </div>
-                                                            </form>
-                                                        </div>
+
+                                                                <div class="comment-form-error comment-form-bottom js-comment-update-error"></div>
+                                                            </div>
+
+                                                            <div class="form-actions">
+                                                                <div id="partial-new-comment-form-actions" class="js-socket-channel js-updatable-content" data-channel="react-bootstrap/react-bootstrap:issue:90384595:state" data-url="/react-bootstrap/react-bootstrap/issues/884/show_partial?partial=issues%2Fform_actions">
+                                                                    <button type="submit" class="btn btn-primary" tabindex="2" data-disable-with="" data-disable-invalid="">Comment</button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -537,9 +530,10 @@
                         </div>
                     </div>
                 </div>
-            </body>
-        </html>
-    </div>
+            </div>
+        </body>
+    </html>
+</div>
 </div>
 
 <script type="text/javascript" src="/js/knockout-3.3.0.js"></script>
