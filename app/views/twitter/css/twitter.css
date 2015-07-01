@@ -14,6 +14,7 @@ a{
 	text-decoration: none;
 }
 
+
 body{
 	margin: 0px;
 	background-image: url(../img/bg.png);
@@ -53,6 +54,7 @@ body{
 .container .tweet img{
 	margin: 0px;
 	width: 48px;
+	height: 48px;
 	margin: 6px 0px;
 	border-radius: 25px;
 }
@@ -63,6 +65,9 @@ body{
 }
 .container .tweet .content .username{
 	margin: 0px;
+}
+.container .tweet .content .title a:hover{
+	color: red;
 }
 .container .tweet .content .username a{
 	margin: 0px;
@@ -100,7 +105,7 @@ body{
 	margin:0px;
 	color: #7f8c8d;
 	font-family: MicroSoft YaHei;
-	font-size: 12px;
+	font-size: 14px;
 	text-decoration: none;
 	margin: 0px 10px;
 }
