@@ -4,7 +4,7 @@ class CreateBugs < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.string :severity
-      t.string :submiter
+      t.integer :submiter_id
       t.integer :assignee_id
       t.string :status
       t.integer :views

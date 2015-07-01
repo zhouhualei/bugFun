@@ -14,6 +14,7 @@ class Bug < ActiveRecord::Base
   has_many :rated_bys, through: :rating_relationships, source: :user
 
   belongs_to :assignee, foreign_key: "assignee_id", class_name: "User"
+  belongs_to :submiter, foreign_key: "submiter_id", class_name: "User"
 
   def ratings
     group_count_hash = rating_relationships.group(:score).count #{1=>1, 3=>1, 4=>2, 5=>1}

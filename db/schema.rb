@@ -24,20 +24,13 @@ ActiveRecord::Schema.define(version: 20150630003552) do
     t.string   "title"
     t.text     "description"
     t.string   "severity"
-    t.string   "submiter"
+    t.integer  "submiter_id"
     t.integer  "assignee_id"
     t.string   "status"
     t.integer  "views"
     t.string   "track"
     t.string   "project"
     t.string   "release"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "comment_relationships", force: true do |t|
-    t.integer  "bug_id"
-    t.integer  "comment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

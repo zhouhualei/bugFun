@@ -26,6 +26,14 @@ users = User.create([
   {
     uid: "xuluo2",
     name: "Xu Luo"
+  },
+  {
+    uid: "pozhang",
+    name: "Polly Zhang"
+  },
+  {
+    uid: "jinghuan",
+    name: "Jing Huang"
   }
 ])
 
@@ -34,6 +42,8 @@ user_warzhou = users[1]
 user_yangjian = users[2]
 user_yiqian = users[3]
 user_xuluo2 = users[4]
+user_pozhang = users[5]
+user_jinghuan = users[6]
 
 
 bugs = Bug.create([
@@ -57,7 +67,7 @@ bugs = Bug.create([
 # Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
 # ",
   #   severity: "",
-  #   submiter: "Polly Zhang",
+  #   submiter: user_pozhang,
   #   assignee: user_yuw3,
   #   status: "New",
   #   views: ,
@@ -70,7 +80,7 @@ bugs = Bug.create([
     title: "group sync: some problems with update sync and initial sync",
     description: "Us3249:[Unfinished][Continued] Ensure usergroup sync released for Feb release",
     severity: "S1",
-    submiter: "Jing Huang",
+    submiter: user_jinghuan,
     assignee: user_yuw3,
     status: "Closed",
     views: 15,
@@ -82,7 +92,7 @@ bugs = Bug.create([
     title: "UI group: in entity group, click \"assign role\" or \"assign resource\", role or resource",
     description: "US3675: [Unfinished] [Continued] [Continued] [Continued] Ensure usergroup sync released for Feb release",
     severity: "S2",
-    submiter: "Jing Huang",
+    submiter: user_jinghuan,
     assignee: user_yuw3,
     status: "Closed",
     views: 17,
@@ -94,7 +104,7 @@ bugs = Bug.create([
     title: "User sync:import a user in App level, this user's status can't synced",
     description: "US3675: [Unfinished] [Continued] [Continued] [Continued] Ensure usergroup sync released for Feb release",
     severity: "S3",
-    submiter: "Jing Huang",
+    submiter: user_jinghuan,
     assignee: nil,
     status: "New",
     views: 3,
@@ -121,7 +131,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: user_yuw3,
     status: "New",
     views: 24,
@@ -148,7 +158,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S2",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: user_yuw3,
     status: "New",
     views: 13,
@@ -175,7 +185,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S3",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: nil,
     status: "New",
     views: 3,
@@ -202,7 +212,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: nil,
     status: "New",
     views: 56,
@@ -229,7 +239,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S3",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: user_xuluo2,
     status: "New",
     views: 5,
@@ -256,7 +266,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S3",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: user_yuw3,
     status: "New",
     views: 7,
@@ -283,7 +293,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S3",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: user_yiqian,
     status: "New",
     views: 8,
@@ -310,7 +320,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S3",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: nil,
     status: "New",
     views: 3,
@@ -337,7 +347,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S2",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: user_yuw3,
     status: "New",
     views: 18,
@@ -364,7 +374,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: user_yuw3,
     status: "Fixed",
     views: 8,
@@ -391,7 +401,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S2",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: user_warzhou,
     status: "Fixed",
     views: 2,
@@ -418,7 +428,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: user_yuw3,
     status: "Fixed",
     views: 9,
@@ -445,7 +455,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: user_yuw3,
     status: "Fixed",
     views: 3,
@@ -472,7 +482,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: user_yuw3,
     status: "Fixed",
     views: 6,
@@ -499,7 +509,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: user_yuw3,
     status: "Fixed",
     views: 6,
@@ -526,7 +536,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: user_yuw3,
     status: "Fixed",
     views: 35,
@@ -553,7 +563,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: user_yuw3,
     status: "Fixed",
     views: 68,
@@ -580,7 +590,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: user_yuw3,
     status: "Fixed",
     views: 1,
@@ -607,7 +617,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S2",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: user_yuw3,
     status: "Fixed",
     views: 8,
@@ -634,7 +644,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: user_yuw3,
     status: "Assigned",
     views: 78,
@@ -661,7 +671,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: user_yuw3,
     status: "Assigned",
     views: 88,
@@ -688,7 +698,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: user_yuw3,
     status: "Assigned",
     views: 88,
@@ -715,7 +725,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S2",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: user_yuw3,
     status: "Assigned",
     views: 38,
@@ -742,7 +752,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: user_yuw3,
     status: "Assigned",
     views: 98,
@@ -769,7 +779,7 @@ Reassigned from yunluo to arunrama, then \"arunrama\" try to do approve.
 
 Notes: this issue also exist for all ICCs under PDT Admin role and HW/SW ICCs under PDT SJ role",
     severity: "S1",
-    submiter: "Polly Zhang",
+    submiter: user_pozhang,
     assignee: user_yuw3,
     status: "Assigned",
     views: 78,
