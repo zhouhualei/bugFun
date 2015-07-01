@@ -861,12 +861,6 @@ user_yangjian.save
 user_yiqian.save
 user_xuluo2.save
 
-rating1 = RatingRelationship.create({
-  user: user_yuw3,
-  bug: bug1,
-  score: 4
-})
-
 rating2 = RatingRelationship.create({
   user: user_warzhou,
   bug: bug1,

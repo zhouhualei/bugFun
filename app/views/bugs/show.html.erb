@@ -1,15 +1,20 @@
     <link href="/css/detail.css" rel="stylesheet">
 <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-2">
+            <h2 data-bind="text: title"></h1>
+        </div>  
+    </div>
+
     <!-- Bug Info -->
     <div class="row">
         <div class="col-md-3 col-md-offset-2">
-            <img height="300" />
+            <img height="160" src="http://cdni.wired.co.uk/620x413/a_c/bsod.jpg" />
         </div>
 
         <div class="col-md-6">
             <div class="container-fluid">
-                <div class="row">                        
-                    <h1 data-bind="text: bugId"></h1>
+                <div class="row">
                     <h4 data-bind="foreach: tags">
                         <span class="label label-primary" data-bind="text: $data"></span>
                     </h4>
@@ -457,7 +462,7 @@
                                                 <div class="js-discussion js-socket-channel" data-channel="brianreavis/selectize.js:marked-as-read:88439592">
                                                     <!-- ko foreach: comments -->
                                                     <div class="timeline-comment-wrapper js-comment-container">
-                                                        <a data-bind="attr: {href: author_img_url}"><img width="48" height="48" class="timeline-comment-avatar" alt="@c143" data-bind="attr: { src: author_img_url, href: author_img_url }"></a>
+                                                        <a data-bind="attr: {href: $parent.getUserPage($data) }"><img width="48" height="48" class="timeline-comment-avatar" alt="@c143" data-bind="attr: { src: author_img_url, href: author_img_url }"></a>
                                                         <div class="comment previewable-edit timeline-comment js-comment js-task-list-container " id="issue-88439592" data-body-version="0b153357d8810a39c44e7e5a80dcf812">
                                                             <div class="timeline-comment-header ">
 

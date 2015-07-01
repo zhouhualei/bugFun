@@ -9,6 +9,10 @@ var ViewModel = (function () {
       "S5": 5,
       "S6": 6
     };
+
+    function userPage(userId) {
+        return "/users/" + userId;
+    };
     
     function UriHelper(stuff, userId, bugId) {
         var target = "/" + stuff + "_relationships.json";
@@ -16,20 +20,20 @@ var ViewModel = (function () {
             target = target + "?user_id=" + userId + "&bug_id=" + bugId;
         }
         return target;
-    }
+    };
     
     function getRelationshipFor(stuff, userId, bugId, callback) {
         $.getJSON(UriHelper(stuff, userId, bugId), callback);
     };
 
     function putRelationshipFor(stuff, data) {
-        $.post(UriHelper(stuff), data);
+        $.post(UriHelper(stuff, data.user_id, data.bug_id), data);
     };
     
     function delRelationshipFor(stuff, data) {
         $.ajax({
             type: 'DELETE',
-            url: UriHelper(stuff),
+            url: UriHelper(stuff, data.user_id, data.bug_id),
             data: data 
         });
     }
@@ -88,8 +92,12 @@ var ViewModel = (function () {
             self.comments(data.comments);
             self.followers_count(data.followers_count);
             self.bookmarkusers_count(data.bookmarkusers_count);
-        });       
-        
+        });
+
+        self.getUserPage = function(context) {
+            return userPage(context.id);
+        }
+
         // My Rating
         
         self.myRating = ko.observable(0);
@@ -117,8 +125,8 @@ var ViewModel = (function () {
         self.rateIt = function (context) {
             self.myRating(context.rating);
             putRelationshipFor("rating", {
-               user_id: this.userId,
-               bug_id: this.bugId,
+               user_id: self.userId,
+               bug_id: self.bugId,
                score: context.rating
             });            
         };
