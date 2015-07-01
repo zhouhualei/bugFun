@@ -5,27 +5,26 @@
         <!-- Bug Info -->
         <div class="row">
             <div class="col-md-3 col-md-offset-2">
-                <img data-bind="attr: { src: url }" height="300" />
+                <img height="300" />
             </div>
 
             <div class="col-md-6">
                 <div class="container-fluid">
-                    <div class="row">
+                    <div class="row">                        
                         <h1 data-bind="text: bugId"></h1>
-
                         <h4 data-bind="foreach: tags">
                             <span class="label label-primary" data-bind="text: $data"></span>
                         </h4>
                     </div>
                     <div class="row">
                         <div class="col-md-3">
-                            <span data-bind="text: rating" style="color: orange; font-size: 100px;"></span>
+                            <span data-bind="text: score" style="color: orange; font-size: 100px;"></span>
                         </div>
                         <div class="col-md-4">
                             <table>
                                 <tbody data-bind="foreach: normalizedRatings">
                                     <tr style="height: 25px;">
-                                        <td><span data-bind="text: score"></span><span class="glyphicon glyphicon-star"></span></td>
+                                        <td><span data-bind="text: count"></span><span class="glyphicon glyphicon-star"></span></td>
                                         <td width="100">
                                             <span style="border: 1px solid orange; background: orange; display: block; height: 20px;" data-bind="style: { width: percentage }"></span>
                                         </td>
@@ -41,49 +40,59 @@
         <div class="row">
             <div class="col-md-offset-2">
                 <div class="btn-group" role="group" aria-label="...">
-                    <!-- ko if: follow -->
+                    <!-- ko if: myFollow -->
                     <button type="button" class="btn btn-primary active">
-                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Followed
+                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true" data-bind="click: toggleFollow"></span> Followed
                     </button>
                     <!-- /ko -->
-                    <!-- ko ifnot: follow -->
+                    <!-- ko ifnot: myFollow -->
                     <button type="button" class="btn btn-default">
-                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Follow
+                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true" data-bind="click: toggleFollow"></span> Follow
                     </button>
                     <!-- /ko -->
-                    <button type="button" class="btn btn-default" data-bind="text: followers"></button>
+                    <button type="button" class="btn btn-default" data-bind="text: followers_count"></button>
                 </div>
+                
                 <div class="btn-group" role="group" aria-label="...">
-                    <!-- ko if: favorite -->
+                    <!-- ko if: myBookmark -->
                     <button type="button" class="btn btn-primary active">
-                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span> In Favorite
+                        <span class="glyphicon glyphicon-star" aria-hidden="true" data-bind="click: toggleBookmark"></span> In Favorite
                     </button>
                     <!-- /ko -->
-                    <!-- ko ifnot: favorite -->
+                    <!-- ko ifnot: myBookmark -->
                     <button type="button" class="btn btn-default">
-                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Add to Favorite
+                        <span class="glyphicon glyphicon-star" aria-hidden="true" data-bind="click: toggleBookmark"></span> Add to Favorite
                     </button>
                     <!-- /ko -->
-                    <button type="button" class="btn btn-default" data-bind="text: favorites"></button>
-                    <!-- ko ifnot: favorite -->
-                    <button type="button" class="btn btn-default">
-                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Add to favorite
-                    </button>
-                    <!-- /ko -->
+                    <button type="button" class="btn btn-default" data-bind="text: bookmarkusers_count"></button>
                 </div>
+
                 <div class="btn-group" role="group" aria-label="...">
+                    <!-- ko if: canRate -->
                     <button type="button" class="btn btn-default">
                         I want to rate this:
                     </button>
                     <button type="button" class="btn btn-default">
-                        <!-- ko foreach: upRatings -->
-                        <span class="glyphicon glyphicon-star"></span>
-                        <!-- /ko -->
-                        <!-- ko foreach: downRatings -->
-                        <span class="glyphicon glyphicon-star-empty"></span>
+                        <!-- ko foreach: stars -->
+                        <span data-bind="click: $parent.rateIt" class="glyphicon glyphicon-star-empty"></span>
                         <!-- /ko -->
                     </button>
+                    <!-- /ko -->
+
+                    <!-- ko ifnot: canRate -->
+                    <button type="button" class="btn btn-default">
+                        My rating:
+                    </button>
+                    <button type="button" class="btn btn-default">
+                        <!-- ko foreach: stars -->
+                        <span data-bind="visible: fill" class="glyphicon glyphicon-star"></span>
+                        <span data-bind="visible: !fill()" class="glyphicon glyphicon-star-empty"></span>
+                        <!-- /ko -->
+                    </button>
+                    <!-- /ko -->                    
                 </div>
+                
+                
                 <div class="btn-group" role="group" aria-label="...">
                     <span class="btn btn-primary">
                         Fixing by Yu Wang
@@ -454,18 +463,20 @@
                                                     <div class="js-discussion js-socket-channel" data-channel="brianreavis/selectize.js:marked-as-read:88439592">
                                                         <!-- ko foreach: comments -->
                                                         <div class="timeline-comment-wrapper js-comment-container">
-                                                            <a data-bind="attr: {href: url}"><img width="48" height="48" class="timeline-comment-avatar" alt="@c143" data-bind="attr: { src: img, href: url }"></a>
+                                                            <a data-bind="attr: {href: author_img_url}"><img width="48" height="48" class="timeline-comment-avatar" alt="@c143" data-bind="attr: { src: img, href: author_img_url }"></a>
                                                             <div class="comment previewable-edit timeline-comment js-comment js-task-list-container " id="issue-88439592" data-body-version="0b153357d8810a39c44e7e5a80dcf812">
                                                                 <div class="timeline-comment-header ">
 
                                                                     <div class="timeline-comment-header-text">
                                                                         <strong>
-                                                                            <a class="author" data-bind="href: url, text: name"></a>
+                                                                            <a class="author" data-bind="href: author_img_url, text: author_name"></a>
                                                                         </strong>
                                                                         commented
 
                                                                         <a class="timestamp" href="#issue-88439592">
-                                                                            <time title="‎Jun‎ ‎15‎, ‎2015‎ ‎10‎:‎16‎ ‎PM" is="relative-time" datetime="2015-06-15T14:16:42Z">3 days ago</time>
+                                                                            <time title="‎Jun‎ ‎15‎, ‎2015‎ ‎10‎:‎16‎ ‎PM" is="relative-time" datetime="2015-06-15T14:16:42Z">
+                                                                                <span data-bind="text: created_at"></span>
+                                                                            </time>
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -534,9 +545,6 @@
 <script type="text/javascript" src="/js/knockout-3.3.0.js"></script>
 <script type="text/javascript" src="/js/detail.js"></script>
 <script type="text/javascript">
-    //$(document).ready(function() {
-
-        
-    //});
+    ko.applyBindings(new ViewModel(userId, bugId));
 </script>
 
