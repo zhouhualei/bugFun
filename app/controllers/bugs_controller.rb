@@ -10,6 +10,8 @@ class BugsController < ApplicationController
   # GET /bugs/1
   # GET /bugs/1.json
   def show
+    @uid = current_user.id
+    @bug_id = params[:id]
   end
 
   # GET /bugs/new

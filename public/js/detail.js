@@ -38,7 +38,7 @@ var ViewModel = (function () {
         });
     }
 
-    function ViewModel(params, userId, bugId) {
+    function ViewModel(userId, bugId) {
         var self = this;
         
         self.tags = ["ui", "cepm", "dev"];
@@ -74,7 +74,7 @@ var ViewModel = (function () {
             var result = [];
         	for (var i = 0; i < 5; i++) {
         		result.push({
-        			count: i,
+        			count: i+1,
         			percentage: Math.floor(ratings[i] * 100 / max) + "%"
         		});
         	}
