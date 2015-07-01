@@ -61,7 +61,8 @@ body{
 
 .container .tweet .content{
 	margin:0px;
-	width: 672px
+	width: 672px;
+	padding-top: 0px;
 }
 .container .tweet .content .username{
 	margin: 0px;
